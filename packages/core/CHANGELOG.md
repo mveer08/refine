@@ -1,5 +1,118 @@
 # @pankod/refine-core
 
+## 3.46.0
+
+### Minor Changes
+
+-   Update notification props in data hooks of `@pankod/refine-core` to cover dynamic notifications.
+
+    Now users will be able to show notifications according to the API response by assigning a function which returns `OpenNotificationParams` instead of an `OpenNotificationParams` object.
+
+    **Example**
+
+    ```tsx
+    {
+        const { mutate } = useCreate({
+            /* ... */
+            successNotification: (data, values, resource) => ({
+                message: data?.message ?? "Success!",
+                type: "success",
+                description: data?.description;
+            }),
+            errorNotification: (error, values, resource) => ({
+                message: error?.message ?? error?.code ?? "Error!",
+                type: "error",
+                description: error?.reason;
+            })
+            /* ... */
+        });
+    }
+    ```
+
+## 3.45.0
+
+### Minor Changes
+
+-   [#2177](https://github.com/pankod/refine/pull/2177) [`5a805c789a`](https://github.com/pankod/refine/commit/5a805c789a167ca3bde34aebacad93bd92510611) Thanks [@aliemir](https://github.com/aliemir)! - Update notification props in data hooks of `@pankod/refine-core` to cover dynamic notifications.
+
+    Now users will be able to show notifications according to the API response by assigning a function which returns `OpenNotificationParams` instead of an `OpenNotificationParams` object.
+
+    **Example**
+
+    ```tsx
+    {
+        const { mutate } = useCreate({
+            /* ... */
+            successNotification: (data, values, resource) => ({
+                message: data?.message ?? "Success!",
+                type: "success",
+                description: data?.description;
+            }),
+            errorNotification: (error, values, resource) => ({
+                message: error?.message ?? error?.code ?? "Error!",
+                type: "error",
+                description: error?.reason;
+            })
+            /* ... */
+        });
+    }
+    ```
+
+## 3.44.0
+
+### Minor Changes
+
+-   Added ability to compare `or` filters. This was a missing feature on filters in `useTable` hook. With this feature, we will prevent `or` filter bugs (Resolves #2124) such as re-adding the same filters and being unable to modify `or` filter. To remove `or` filter with `merge` behavior, you should pass an empty object as `value`.
+
+### Patch Changes
+
+-   Fix redirection after submit in `useForm`. Both `edit` and `create` will redirect to `list` (it was `edit` previously)
+
+    Resolves #2123
+
+## 3.43.1
+
+### Patch Changes
+
+-   [#2172](https://github.com/pankod/refine/pull/2172) [`c33d13eb15`](https://github.com/pankod/refine/commit/c33d13eb15b986429d92e4e0e5f2bccd91fd1140) Thanks [@aliemir](https://github.com/aliemir)! - Fix redirection after submit in `useForm`. Both `edit` and `create` will redirect to `list` (it was `edit` previously)
+
+    Resolves #2123
+
+## 3.43.0
+
+### Minor Changes
+
+-   [#2164](https://github.com/pankod/refine/pull/2164) [`4d5f6b25e5`](https://github.com/pankod/refine/commit/4d5f6b25e51cf773e08a0ce0b93a3680e692564a) Thanks [@aliemir](https://github.com/aliemir)! - Added ability to compare `or` filters. This was a missing feature on filters in `useTable` hook. With this feature, we will prevent `or` filter bugs (Resolves #2124) such as re-adding the same filters and being unable to modify `or` filter. To remove `or` filter with `merge` behavior, you should pass an empty object as `value`.
+
+## 3.42.0
+
+### Minor Changes
+
+-   ### `@pankod/refine-core`
+
+    -   Added extra params to `useSubscription` and `useResourceSubscription`
+    -   `useOne`, `useMany` and `useList` passed extra params to own subscription hook.
+
+    ### `@pankod/refine-hasura`
+
+    -   Added `liveProvider`.
+
+    To see an example of how to use it, check out [`here`](https://github.com/pankod/refine/blob/master/examples/dataProvider/hasura/src/App.tsx).
+
+    ### `@pankod/refine-nhost`
+
+    -   Added `liveProvider`.
+
+    To see an example of how to use it, check out [`here`](https://github.com/pankod/refine/blob/master/examples/dataProvider/nhost/src/App.tsx).
+
+    ### `@pankod/refine-graphql`
+
+    -   Added `liveProvider`.
+
+### Patch Changes
+
+-   Fixed it to appear in menu items even if `List` is not given in resources #2147
+
 ## 3.41.1
 
 ### Patch Changes
