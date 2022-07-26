@@ -1,5 +1,37 @@
 # @pankod/refine-antd
 
+## 3.32.0
+
+### Minor Changes
+
+-   [#2217](https://github.com/pankod/refine/pull/2217) [`b4aae00f77`](https://github.com/pankod/refine/commit/b4aae00f77a2476d847994db21298ae25e4cf6e5) Thanks [@omeraplak](https://github.com/omeraplak)! - All of the refine packages have dependencies on the `@pankod/refine-core` package. So far we have managed these dependencies with `peerDependencies` + `dependencies` but this causes issues like #2183. (having more than one @pankod/refine-core version in node_modules and creating different instances)
+
+    Managing as `peerDependencies` + `devDependencies` seems like the best way for now to avoid such issues.
+
+## 3.31.0
+
+### Minor Changes
+
+-   **BREAKING** Updated `useStepsForm` prop `isBackValidate` with default `false` instead of `true` to achieve consistency between packages (`@pankod/refine-react-hook-form`).
+
+### Patch Changes
+
+-   Fix `useModal` hook doesn't return `modalProps`
+
+*   Added `hasPagination` support to [`useSimpleList`](https://refine.dev/docs/ui-frameworks/antd/hooks/list/useSimpleList/) hook.
+
+## 3.30.0
+
+### Minor Changes
+
+-   [#2206](https://github.com/pankod/refine/pull/2206) [`874b05af37`](https://github.com/pankod/refine/commit/874b05af377b995c9cea6cbcde5407a19403f53d) Thanks [@aliemir](https://github.com/aliemir)! - **BREAKING** Updated `useStepsForm` prop `isBackValidate` with default `false` instead of `true` to achieve consistency between packages (`@pankod/refine-react-hook-form`).
+
+### Patch Changes
+
+-   [#2203](https://github.com/pankod/refine/pull/2203) [`3c80308ca1`](https://github.com/pankod/refine/commit/3c80308ca143d11d7daeb7e9624d0138ecede42d) Thanks [@omeraplak](https://github.com/omeraplak)! - Fix `useModal` hook doesn't return `modalProps`
+
+*   [#2201](https://github.com/pankod/refine/pull/2201) [`62c261c2a7`](https://github.com/pankod/refine/commit/62c261c2a7eaaec77d10440f2ec37f3697d869c9) Thanks [@omeraplak](https://github.com/omeraplak)! - Added `hasPagination` support to [`useSimpleList`](https://refine.dev/docs/ui-frameworks/antd/hooks/list/useSimpleList/) hook.
+
 ## 3.29.0
 
 ### Minor Changes
