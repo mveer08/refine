@@ -26,7 +26,8 @@ export const CustomSider: React.FC = () => {
     const { menuItems, selectedKey } = useMenu();
     const breakpoint = Grid.useBreakpoint();
 
-    const isMobile = !breakpoint.lg;
+    const isMobile =
+        typeof breakpoint.lg === "undefined" ? false : !breakpoint.lg;
 
     useSubscription({
         channel: "resources/posts",
@@ -58,6 +59,7 @@ export const CustomSider: React.FC = () => {
                     key={route}
                     resource={name.toLowerCase()}
                     action="list"
+                    params={{ resource: item }}
                 >
                     <Menu.Item
                         key={route}

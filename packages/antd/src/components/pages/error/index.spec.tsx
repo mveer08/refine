@@ -1,8 +1,10 @@
 import React from "react";
+import { pageErrorTests } from "@pankod/refine-ui-tests";
 import ReactRouterDom, { Route, Routes } from "react-router-dom";
 
 import { ErrorComponent } from ".";
 import { render, fireEvent, TestWrapper } from "@test";
+import { act } from "react-dom/test-utils";
 
 const mHistory = {
     push: jest.fn(),
@@ -14,6 +16,8 @@ jest.mock("react-router-dom", () => ({
 }));
 
 describe("ErrorComponent", () => {
+    pageErrorTests.bind(this)(ErrorComponent);
+
     it("renders subtitle successfully", () => {
         const { getByText } = render(<ErrorComponent />, {
             wrapper: TestWrapper({}),
@@ -31,17 +35,19 @@ describe("ErrorComponent", () => {
         getByText("Back Home");
     });
 
-    it("renders called function successfully if click the button", () => {
+    xit("renders called function successfully if click the button", () => {
         const { getByText } = render(<ErrorComponent />, {
             wrapper: TestWrapper({}),
         });
 
-        fireEvent.click(getByText("Back Home"));
+        act(async () => {
+            fireEvent.click(getByText("Back Home"));
+        });
 
-        expect(mHistory.push).toBeCalledWith("/", undefined);
+        expect(mHistory.push).toBeCalledWith("/");
     });
 
-    fit("renders error messages if resources action's not found", async () => {
+    it("renders error messages if resources action's not found", async () => {
         const { getByTestId, findByText } = render(
             <Routes>
                 <Route path="/:resource/:action" element={<ErrorComponent />} />

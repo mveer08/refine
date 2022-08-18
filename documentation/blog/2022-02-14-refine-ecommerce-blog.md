@@ -29,7 +29,7 @@ In this article, we will create the e-commerce client of our [Strapi-Multitenanc
 
 It is now used **headless** with the **refine** 3 version. You can use any UI library you want with the **headless** feature.
 
-We will use [Strapi](https://strapi.io/) and [Chakra-UI](https://chakra-ui.com/) together with [**Next.js**](/docs/guides-and-concepts/ssr-nextjs/) in our E-commerce client example application.
+We will use [Strapi](https://strapi.io/) and [Chakra-UI](https://chakra-ui.com/) together with [**Next.js**](/docs/guides-and-concepts/ssr/nextjs/) in our E-commerce client example application.
 
 <!--truncate-->
 
@@ -137,9 +137,10 @@ We created our collections in the previous Strapi Multitenancy guide. Now we wil
 The Layout we've created now will only show the **refine** logo. In the following steps, we will edit our Layout.
 
 ```tsx title="components/Layout.tsx"
+import { LayoutProps } from "@pankod/refine-core";
 import { Box, Container, Flex, Image } from "@chakra-ui/react";
 
-export const Layout: React.FC = ({ children }) => {
+export const Layout: React.FC<LayoutProps> = ({ children }) => {
     return (
         <Box
             display={"flex"}

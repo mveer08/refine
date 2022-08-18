@@ -172,6 +172,7 @@ Fake REST API is based on [JSON Server Project](https://github.com/typicode/json
 -   [Hasura](https://github.com/pankod/refine/tree/master/packages/hasura)
 -   [Nhost](https://github.com/pankod/refine/tree/master/packages/nhost)
 -   [Appwrite](https://github.com/pankod/refine/tree/master/packages/appwrite)
+-   [Medusa](https://github.com/pankod/refine/tree/master/packages/medusa)
 -   [Altogic](https://github.com/pankod/refine/tree/master/packages/altogic)
 
 ### Community ❤️
@@ -416,12 +417,12 @@ We will create a **Layout** component to handle the rendering of the **Page** co
 Create a new folder named _"components"_ under _"/src"_ and create a new file named _"Layout.tsx"_ with the following code:
 
 ```tsx title="components/Layout.tsx"
-import { useMenu, useNavigation } from "@pankod/refine-core";
+import { useMenu, useNavigation, LayoutProps } from "@pankod/refine-core";
 import routerProvider from "@pankod/refine-react-router-v6";
 
 const { Link } = routerProvider;
 
-export const Layout: React.FC = ({ children }) => {
+export const Layout: React.FC<LayoutProps> = ({ children }) => {
     const { menuItems } = useMenu();
     const { push } = useNavigation();
 

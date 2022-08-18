@@ -27,7 +27,7 @@ import table_i18n from '@site/static/img/blog/2022-02-21-react-antd-admin/table-
 
 📦 Out-of-the-box : Routing, networking, authentication, state management, i18n and UI.
 
-🔌 Backend Agnostic : Connects to any custom backend. Built-in support for REST API, GraphQL, NestJs CRUD, Airtable, Strapi, Strapi v4, Strapi GraphQL, Supabase, Hasura, Nhost, Appwrite, Firebase and Altogic.
+🔌 Backend Agnostic : Connects to any custom backend. Built-in support for REST API, GraphQL, NestJs CRUD, Airtable, Strapi, Strapi v4, Strapi GraphQL, Supabase, Hasura, Nhost, Medusa, Appwrite, Firebase and Altogic.
 
 📝 Native Typescript Core : You can always opt out for plain JavaScript.
 
@@ -126,18 +126,19 @@ Let's import the `i18n` instance we created in index.tsx. Then let's wrap the Ap
 
 ```tsx title="src/index.tsx"
 import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
+import { createRoot } from "react-dom/client";
 
+import App from "./App";
 import "./i18n";
 
-ReactDOM.render(
+const container = document.getElementById("root");
+const root = createRoot(container!);
+root.render(
     <React.StrictMode>
         <React.Suspense fallback="loading">
             <App />
         </React.Suspense>
     </React.StrictMode>,
-    document.getElementById("root"),
 );
 ```
 

@@ -20,9 +20,10 @@ import {
 import { Title as DefaultTitle } from "@components";
 
 import { antLayoutSider, antLayoutSiderMobile } from "./styles";
+import { RefineLayoutSiderProps } from "@pankod/refine-ui-types";
 const { SubMenu } = Menu;
 
-export const Sider: React.FC = () => {
+export const Sider: React.FC<RefineLayoutSiderProps> = () => {
     const [collapsed, setCollapsed] = useState<boolean>(false);
     const isExistAuthentication = useIsExistAuthentication();
     const { Link } = useRouterContext();
@@ -33,7 +34,8 @@ export const Sider: React.FC = () => {
     const breakpoint = Grid.useBreakpoint();
     const { hasDashboard } = useRefineContext();
 
-    const isMobile = !breakpoint.lg;
+    const isMobile =
+        typeof breakpoint.lg === "undefined" ? false : !breakpoint.lg;
 
     const RenderToTitle = Title ?? DefaultTitle;
 
@@ -61,6 +63,9 @@ export const Sider: React.FC = () => {
                     key={route}
                     resource={name.toLowerCase()}
                     action="list"
+                    params={{
+                        resource: item,
+                    }}
                 >
                     <Menu.Item
                         key={route}

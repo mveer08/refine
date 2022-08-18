@@ -1,5 +1,5 @@
-import React from "react";
-import { QueryClient, QueryClientProvider } from "react-query";
+import React, { ReactNode } from "react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter } from "react-router-dom";
 
 import { AuthContextProvider } from "@contexts/auth";
@@ -25,19 +25,27 @@ import { LiveContextProvider } from "@contexts/live";
 import { NotificationContextProvider } from "@contexts/notification";
 import { AuditLogContextProvider } from "@contexts/auditLog";
 
-import {
-    MockRouterProvider,
-    MockAccessControlProvider,
-    MockLiveProvider,
-} from "@test";
+import { MockRouterProvider } from "@test";
 
-const queryClient = new QueryClient({
+export const queryClient = new QueryClient({
+    logger: {
+        log: console.log,
+        warn: console.warn,
+        // ✅ no more errors on the console
+        error: () => {
+            return {};
+        },
+    },
     defaultOptions: {
         queries: {
             cacheTime: 0,
             retry: 0,
         },
     },
+});
+
+beforeEach(() => {
+    queryClient.clear();
 });
 
 export interface ITestWrapperProps {
@@ -54,7 +62,9 @@ export interface ITestWrapperProps {
     auditLogProvider?: IAuditLogContext;
 }
 
-export const TestWrapper: (props: ITestWrapperProps) => React.FC = ({
+export const TestWrapper: (
+    props: ITestWrapperProps,
+) => React.FC<{ children: ReactNode }> = ({
     authProvider,
     dataProvider,
     resources,

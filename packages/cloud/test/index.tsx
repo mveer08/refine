@@ -1,5 +1,5 @@
-import React from "react";
-import { QueryClient, QueryClientProvider } from "react-query";
+import React, { ReactNode } from "react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import { CloudContextProvider } from "../src/contexts";
 import { ICloudContext } from "../src/interfaces";
@@ -18,9 +18,9 @@ export interface ITestWrapperProps {
     children?: React.ReactNode;
 }
 
-export const TestWrapper: (props: ITestWrapperProps) => React.FC = ({
-    cloudConfig,
-}) => {
+export const TestWrapper: (
+    props: ITestWrapperProps,
+) => React.FC<{ children: ReactNode }> = ({ cloudConfig }) => {
     // eslint-disable-next-line react/display-name
     return ({ children }): React.ReactElement => {
         const withRefine = cloudConfig ? (

@@ -1,5 +1,25 @@
 # @pankod/refine-strapi-v4
 
+## 3.29.0
+
+### Minor Changes
+
+-   Add React@18 support 🚀
+
+## 3.28.0
+
+### Minor Changes
+
+-   [#1718](https://github.com/pankod/refine/pull/1718) [`b38620d842`](https://github.com/pankod/refine/commit/b38620d84237e13212811daada7b49ee654c70eb) Thanks [@omeraplak](https://github.com/omeraplak)! - Add React@18 support 🚀
+
+## 3.27.0
+
+### Minor Changes
+
+-   All of the refine packages have dependencies on the `@pankod/refine-core` package. So far we have managed these dependencies with `peerDependencies` + `dependencies` but this causes issues like #2183. (having more than one @pankod/refine-core version in node_modules and creating different instances)
+
+    Managing as `peerDependencies` + `devDependencies` seems like the best way for now to avoid such issues.
+
 ## 3.26.0
 
 ### Minor Changes

@@ -1,5 +1,132 @@
 # @pankod/refine-mui
 
+## 3.41.8
+
+### Patch Changes
+
+-   Added React 17 support to `peerDependencies`.
+
+## 3.41.7
+
+### Patch Changes
+
+-   [#2306](https://github.com/pankod/refine/pull/2306) [`bb3183d3eb`](https://github.com/pankod/refine/commit/bb3183d3eb4b257cafd98f0ef8949e4c0ddb9e90) Thanks [@aliemir](https://github.com/aliemir)! - Added React 17 support to `peerDependencies`.
+
+## 3.41.6
+
+### Patch Changes
+
+-   Fixed `StackProps` and `StackTypeMap` type exports
+
+## 3.41.5
+
+### Patch Changes
+
+-   [#2300](https://github.com/pankod/refine/pull/2300) [`59f9e5eebf`](https://github.com/pankod/refine/commit/59f9e5eebf372da36fc953d1affb04f393aac88d) Thanks [@omeraplak](https://github.com/omeraplak)! - Fixed `StackProps` and `StackTypeMap` type exports
+
+## 3.41.4
+
+### Patch Changes
+
+-   Upgraded `react-query` version to 4.
+
+-   Updated dependencies []:
+    -   @pankod/refine-react-hook-form@3.31.2
+
+## 3.41.3
+
+### Patch Changes
+
+-   [#2260](https://github.com/pankod/refine/pull/2260) [`a97ec592df`](https://github.com/pankod/refine/commit/a97ec592dfb6dcf5b5bd063d2d76f50ca195c20e) Thanks [@salihozdemir](https://github.com/salihozdemir)! - Upgraded `react-query` version to 4.
+
+-   Updated dependencies [[`6847672849`](https://github.com/pankod/refine/commit/68476728494dc0fd412883de30e2c99c75a1d559)]:
+    -   @pankod/refine-react-hook-form@3.31.1
+
+## 3.41.2
+
+### Patch Changes
+
+-   Remove `data-testid` props from buttons in crud components to make use of button test ids presented by `@pankod/refine-ui-types` package.
+
+*   Updated `@pankod/refine-antd` and `@pankod/refine-mui` `fields` properties by using `@pankod/refine-ui-types` common `fields` types.
+
+    Updated `@pankod/refine-antd` and `@pankod/refine-mui` `fields` tests by using `@pankod/refine-ui-tests` common `fields` tests.
+
+    Updated `@pankod/refine-ui-tests` `fields` properties.
+
+-   Added `@pankod/refine-ui-tests` and `@pankod/refine-ui-types` packages. Now, all of button prop types comes from `@pankod/refine-ui-types` package and all of button tests comes from `@pankod/refine-ui-tests` package.
+
+    Thus, button types and tests are managed by `@pankod/refine-ui-types` package and `@pankod/refine-ui-tests` package.
+
+-   Updated dependencies []:
+    -   @pankod/refine-ui-types@0.3.0
+
+## 3.41.1
+
+### Patch Changes
+
+-   [#2216](https://github.com/pankod/refine/pull/2216) [`201846c77d`](https://github.com/pankod/refine/commit/201846c77dba07a61f0c0335716b60641430c22a) Thanks [@aliemir](https://github.com/aliemir)! - Remove `data-testid` props from buttons in crud components to make use of button test ids presented by `@pankod/refine-ui-types` package.
+
+*   [#2216](https://github.com/pankod/refine/pull/2216) [`201846c77d`](https://github.com/pankod/refine/commit/201846c77dba07a61f0c0335716b60641430c22a) Thanks [@aliemir](https://github.com/aliemir)! - Updated `@pankod/refine-antd` and `@pankod/refine-mui` `fields` properties by using `@pankod/refine-ui-types` common `fields` types.
+
+    Updated `@pankod/refine-antd` and `@pankod/refine-mui` `fields` tests by using `@pankod/refine-ui-tests` common `fields` tests.
+
+    Updated `@pankod/refine-ui-tests` `fields` properties.
+
+-   [#2216](https://github.com/pankod/refine/pull/2216) [`201846c77d`](https://github.com/pankod/refine/commit/201846c77dba07a61f0c0335716b60641430c22a) Thanks [@aliemir](https://github.com/aliemir)! - Added `@pankod/refine-ui-tests` and `@pankod/refine-ui-types` packages. Now, all of button prop types comes from `@pankod/refine-ui-types` package and all of button tests comes from `@pankod/refine-ui-tests` package.
+
+    Thus, button types and tests are managed by `@pankod/refine-ui-types` package and `@pankod/refine-ui-tests` package.
+
+-   Updated dependencies [[`201846c77d`](https://github.com/pankod/refine/commit/201846c77dba07a61f0c0335716b60641430c22a)]:
+    -   @pankod/refine-ui-types@0.2.0
+
+## 3.41.0
+
+### Minor Changes
+
+-   Add React@18 support 🚀
+
+### Patch Changes
+
+-   Updated dependencies []:
+    -   @pankod/refine-react-hook-form@3.31.0
+
+## 3.40.0
+
+### Minor Changes
+
+-   [#1718](https://github.com/pankod/refine/pull/1718) [`b38620d842`](https://github.com/pankod/refine/commit/b38620d84237e13212811daada7b49ee654c70eb) Thanks [@omeraplak](https://github.com/omeraplak)! - Add React@18 support 🚀
+
+### Patch Changes
+
+-   Updated dependencies [[`b38620d842`](https://github.com/pankod/refine/commit/b38620d84237e13212811daada7b49ee654c70eb)]:
+    -   @pankod/refine-react-hook-form@3.30.0
+
+## 3.39.2
+
+### Patch Changes
+
+-   Updated `console.warn`'s to trigger once.
+
+## 3.39.1
+
+### Patch Changes
+
+-   [#2223](https://github.com/pankod/refine/pull/2223) [`0a215f2000`](https://github.com/pankod/refine/commit/0a215f2000b4069618e42efda48b8864b38129fd) Thanks [@salihozdemir](https://github.com/salihozdemir)! - Updated `console.warn`'s to trigger once.
+
+## 3.39.0
+
+### Minor Changes
+
+-   All of the refine packages have dependencies on the `@pankod/refine-core` package. So far we have managed these dependencies with `peerDependencies` + `dependencies` but this causes issues like #2183. (having more than one @pankod/refine-core version in node_modules and creating different instances)
+
+    Managing as `peerDependencies` + `devDependencies` seems like the best way for now to avoid such issues.
+
+### Patch Changes
+
+-   Updated dependencies []:
+    -   @pankod/refine-react-hook-form@3.29.0
+
 ## 3.38.0
 
 ### Minor Changes

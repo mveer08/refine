@@ -12,6 +12,113 @@ This guide will help you learn and get information of basic **refine** concepts.
 -   [Join the Discord Community](https://discord.gg/refine) – it is the easiest way to get help, all questions are usually answered in about 30 minutes.
 -   [GitHub Discussions](https://github.com/pankod/refine/discussions) – ask anything about the project or give feedback.
 
+## General Concepts
+
+-   **refine** core is fully independent of UI. So you can use core components and hooks without any UI dependency.
+-   All the **data** related hooks([`useTable`](/core/hooks/useTable.md), [`useForm`](/core/hooks/useForm.md), [`useList`](/core/hooks/data/useList.md) etc.) of **refine** can be given some common properties like `resource`, `metaData`, `queryOptions` etc.
+
+### `resource`
+
+**refine** passes the `resource` to the `dataProvider` as a params. This parameter is usually used to as a API endpoint path. It all depends on how to handle the `resource` in your `dataProvider`. See the [`creating a data provider`](/core/providers/data-provider.md#creating-a-data-provider) section for an example of how `resource` are handled.
+
+How does refine know what the resource value is?
+
+1- The resource value is determined from the active route where the component or the hook is used.
+
+Like below, if you are using the hook in the `<PostList>` component, the `resource` value defaults to `"posts"`.
+
+```tsx title="src/App.tsx"
+import { Refine } from "@pankod/refine-core";
+import dataProvider from "@pankod/refine-simple-rest";
+import routerProvider from "@pankod/refine-react-router-v6";
+
+import { PostList } from "pages/posts/list.tsx";
+
+const App: React.FC = () => {
+    return (
+        <Refine
+            routerProvider={routerProvider}
+            dataProvider={dataProvider("https://api.fake-rest.refine.dev")}
+            resources={[
+                {
+                    name: "posts",
+                    list: PostList,
+                },
+            ]}
+        />
+    );
+};
+
+export default App;
+```
+
+2- The resource value is determined from the `resource` prop of the hook.
+
+You can override the default `resource` value hook by passing the `resource` prop to the hook like below:
+
+```tsx title="src/pages/posts/list.tsx"
+import { useTable } from "@pankod/refine-core";
+
+const PostList: React.FC = () => {
+    const result = useTable({
+        //highlight-next-line
+        resource: "users",
+    });
+
+    return <div>...</div>;
+};
+```
+
+How can I request an API with nested route?
+
+<br/>
+
+[Refer to how to use resource with nested routes documentation for more information. &#8594](/faq.md#how-can-i-request-an-api-with-nested-route)
+
+### `metaData`
+
+`metaData` is used following two purposes:
+
+-   To pass additional information to data provider methods.
+-   Generate GraphQL queries using plain JavaScript Objects (JSON).
+
+How to use `metaData` to pass additional information to data provider methods?
+
+```tsx
+useOne({
+    resource: "posts",
+    id: 1,
+    // highlight-start
+    metaData: {
+        headers: { "x-meta-data": "true" },
+    },
+    // highlight-end
+});
+
+const myDataProvider = {
+    ...
+    getOne: async ({ resource, id, metaData }) => {
+        // highlight-next-line
+        const headers = metaData?.headers ?? {};
+        const url = `${apiUrl}/${resource}/${id}`;
+
+        //highlight-next-line
+        const { data } = await httpClient.get(url, { headers });
+
+        return {
+            data,
+        };
+    },
+    ...
+};
+```
+
+In the above example, we pass the `headers` property in the `metaData` object to the `getOne` method. With similar logic, you can pass any properties to specifically handle the data provider methods.
+
+[Refer to the how to pass `metaData` to your existing `dataProvider` methods. &#8594](/faq.md#how-i-can-override-specific-function-of-data-providers)
+
+[Refer to the `GraphQL` guide to learn how to use `metaData` to create GraphQL queries. &#8594](/guides-and-concepts/data-provider/graphql.md)
+
 ## Refine Packages
 
 -   `@pankod/refine-core` - collection of 20+ React hooks for State, Networking, Authentication, Authorization, i18n and Live/Realtime Management.
@@ -27,15 +134,15 @@ This guide will help you learn and get information of basic **refine** concepts.
 -   `@pankod/refine-simple-rest` - a fully featured REST API Data Provider
 -   `@pankod/refine-graphql` - a fully featured GraphQL Data Provider
 -   `@pankod/refine-nestjsx-crud` - a fully featured [NestJs Crud](https://github.com/nestjsx/crud) Data Provider
--   `@pankod/refine-strapi` - a fully featured [Strapi](https://github.com/strapi/strapi) Data Provider
--   `@pankod/refine-strapi-v4` - a fully featured [Strapi-v4](https://docs.strapi.io/developer-docs/latest/getting-started/introduction.html) Data Provider
--   `@pankod/refine-strapi-graphql` - a fully featured [Strapi-GraphQL](https://github.com/strapi/strapi/tree/master/packages/plugins/graphql) Data Provider
--   `@pankod/refine-supabase` - a fully featured [Supabase](https://github.com/supabase/supabase) Data Provider. Also supported Supabase Realtime feature.
--   `@pankod/refine-hasura` - a fully featured [Hasura GraphQL](https://github.com/hasura/graphql-engine) Data Provider. Also supported GraphQL Subscriptions feature.
--   `@pankod/refine-nhost` - a fully featured [Nhost](https://github.com/nhost/nhost) Data Provider. Also supported GraphQL Subscriptions feature.
--   `@pankod/refine-appwrite` - a fully featured [Appwrite](https://github.com/appwrite/appwrite) Data Provider. Also supported Appwrite Realtime feature.
--   `@pankod/refine-airtable` - a fully featured [Airtable](https://github.com/Airtable/airtable.js) Data Provider
--   `@pankod/refine-altogic` - a fully featured [Altogic](https://github.com/altogic/altogic-js) Data Provider
+-   `@pankod/refine-strapi-v4` - a fully featured [Strapi-v4](https://strapi.io/) Data Provider
+-   `@pankod/refine-strapi-graphql` - a fully featured [Strapi-GraphQL](https://strapi.io/) Data Provider
+-   `@pankod/refine-strapi` - a fully featured [Strapi](https://strapi.io/) Data Provider
+-   `@pankod/refine-supabase` - a fully featured [Supabase](https://supabase.com/) Data Provider. Also supported Supabase Realtime feature.
+-   `@pankod/refine-hasura` - a fully featured [Hasura GraphQL](https://hasura.io/) Data Provider. Also supported GraphQL Subscriptions feature.
+-   `@pankod/refine-appwrite` - a fully featured [Appwrite](https://appwrite.io/) Data Provider. Also supported Appwrite Realtime feature.
+-   `@pankod/refine-medusa` - a fully featured [Medusa](https://medusajs.com/) Data Provider
+-   `@pankod/refine-airtable` - a fully featured [Airtable](https://airtable.com/) Data Provider
+-   `@pankod/refine-altogic` - a fully featured [Altogic](https://www.altogic.com/) Data Provider
 
 **[Router Provider](https://refine.dev/docs/core/providers/router-provider/) Packages**
 
@@ -43,6 +150,7 @@ This guide will help you learn and get information of basic **refine** concepts.
 -   `@pankod/refine-react-router` - Router Provider for [React Router (v5)](https://v5.reactrouter.com/)
 -   `@pankod/refine-nextjs-router` - Router Provider for [Next.js](https://nextjs.org/docs/api-reference/next/router#userouter)
 -   `@pankod/refine-react-location` - Router Provider for [React Location](https://github.com/tannerlinsley/react-location)
+-   `@pankod/refine-remix-router` - Router Provider for [Remix](https://remix.run/)
 
 **[Live Provider](https://refine.dev/docs/core/providers/live-provider/) Packages**
 
@@ -69,7 +177,7 @@ This guide will help you learn and get information of basic **refine** concepts.
 
 -   [Casbin](https://casbin.org/) - [Example](https://refine.dev/docs/examples/access-control/casbin/) - [Source Code](https://github.com/pankod/refine/blob/master/examples/accessControl/casbin/src/App.tsx#L27)
 -   [Cerbos](https://cerbos.dev/) - [Example](https://refine.dev/docs/examples/access-control/cerbos/) - [Source Code](https://github.com/pankod/refine/blob/master/examples/accessControl/cerbos/src/App.tsx#L37)
--   [Permify](https://www.permify.co/) - [Example](https://refine.dev/docs/examples/access-control/permify/) - [Source Code](https://github.com/Permify/permify-refine/blob/master/src/App.tsx#L43)
+
 
 **[Auth Provider](https://refine.dev/docs/api-references/providers/auth-provider/)**
 
@@ -91,11 +199,11 @@ This guide will help you learn and get information of basic **refine** concepts.
 
 We are looking for guest technical writers to publish posts about React and front-end ecosystem technologies.
 
- The focus of these posts should be on React and front-end ecosystem technologies. 
+The focus of these posts should be on React and front-end ecosystem technologies.
 
- [If you are interested in writing for us, please check this post for detailed information &#8594](https://refine.dev/blog/refine-writer-program/)
+[If you are interested in writing for us, please check this post for detailed information &#8594](https://refine.dev/blog/refine-writer-program/)
 
- Thanks for considering being a part of our blog!
+Thanks for considering being a part of our blog!
 
 ## Roadmap
 

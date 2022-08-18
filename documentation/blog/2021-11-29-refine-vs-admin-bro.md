@@ -54,7 +54,7 @@ npx superplate-cli demo-refine-project
 
 * Out-of-the-box: Routing, networking, authentication, state managment, i18n and UI.
 
-* Next.js / SSR integration: **refine** can be used with Next.js to SSR your pages.
+* SSR: **refine** can be used with Next.js and Remix to SSR your pages.
 
 * React Location: React Location router provider support 
 
@@ -94,7 +94,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 
 export default MyApp;
 ```
-[For more information on how to add SSR-Next.js to your Refine project ->](https://refine.dev/docs/guides-and-concepts/ssr-nextjs/) 
+[For more information on how to add SSR-Next.js to your Refine project ->](https://refine.dev/docs/guides-and-concepts/ssr/nextjs/) 
 
 ### Routing
 **refine** uses a customized Router Provider to save routes and navigate between pages. **refine** offers a much more flexible structure thanks to its routerProvider support.
@@ -383,6 +383,7 @@ Connects to any REST or GraphQL custom backend.
 * Nhost: [https://github.com/pankod/refine/tree/master/examples/dataProvider/nhost](https://github.com/pankod/refine/tree/master/examples/dataProvider/nhost)
 * Appwrite: [https://github.com/pankod/refine/tree/master/examples/dataProvider/appwrite](https://github.com/pankod/refine/tree/master/examples/dataProvider/appwrite)
 * Altogic: [https://github.com/pankod/refine/tree/master/examples/dataProvider/altogic](https://github.com/pankod/refine/tree/master/examples/dataProvider/altogic)
+* Medusa: [https://github.com/pankod/refine/tree/next/packages/medusa](https://github.com/pankod/refine/tree/next/packages/medusa)
 
 ### Customization
 * **refine's** motivation and main purpose are as follows: "Higher-level frontend frameworks can save you a lot time, but they typically offer you a trade-off between speed and flexibility." 

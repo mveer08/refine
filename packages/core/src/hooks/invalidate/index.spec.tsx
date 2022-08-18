@@ -1,8 +1,8 @@
 import { TestWrapper } from "@test";
-import { renderHook } from "@testing-library/react-hooks";
+import { renderHook } from "@testing-library/react";
 import { useInvalidate } from ".";
 
-import * as ReactQuery from "react-query";
+import * as ReactQuery from "@tanstack/react-query";
 
 describe("useInvalidate", () => {
     it("with empty invalidations array", async () => {

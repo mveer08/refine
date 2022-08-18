@@ -76,6 +76,7 @@ module.exports = {
                                 "core/hooks/data/useCreate",
                                 "core/hooks/data/useCreateMany",
                                 "core/hooks/data/useCustom",
+                                "core/hooks/data/useCustomMutation",
                                 "core/hooks/data/useDataProvider",
                                 "core/hooks/data/useDelete",
                                 "core/hooks/data/useDeleteMany",
@@ -465,7 +466,14 @@ module.exports = {
                         "guides-and-concepts/search/table-search",
                     ],
                 },
-                "guides-and-concepts/ssr-nextjs",
+                {
+                    type: "category",
+                    label: "SSR",
+                    items: [
+                        "guides-and-concepts/ssr/remix",
+                        "guides-and-concepts/ssr/nextjs",
+                    ],
+                },
                 {
                     type: "category",
                     label: "Upload",
@@ -502,7 +510,6 @@ module.exports = {
                     items: [
                         "examples/access-control/casbin",
                         "examples/access-control/cerbos",
-                        "examples/access-control/permify",
                     ],
                 },
                 "examples/authorization",
@@ -646,9 +653,25 @@ module.exports = {
                 },
                 {
                     type: "category",
+                    label: "Next.js",
+                    items: [
+                        "examples/next-js/nextjs",
+                        "examples/next-js/i18n-nextjs",
+                    ],
+                },
+                {
+                    type: "category",
                     label: "Notification Provider",
                     items: ["examples/notification-provider/react-toastify"],
                 },
+                /*                 {
+                    type: "category",
+                    label: "Remix",
+                    items: [
+                        "examples/remix/remix-antd",
+                        "examples/remix/remix-headless",
+                    ],
+                }, */
                 {
                     type: "category",
                     label: "Router Provider",
@@ -693,6 +716,11 @@ module.exports = {
                                 "examples/table/react-table/advanced-react-table",
                                 "examples/table/react-table/react-table",
                             ],
+                        },
+                        {
+                            type: "category",
+                            label: "Handson Table",
+                            items: ["examples/table/handsontable/handsontable"],
                         },
                     ],
                 },

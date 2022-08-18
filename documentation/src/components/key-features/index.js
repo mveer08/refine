@@ -144,12 +144,12 @@ const backendLinks = [
         text: "Hasura",
     },
     {
-        href: "https://nhost.io/",
-        text: "Nhost",
-    },
-    {
         href: "https://appwrite.io/",
         text: "Appwrite",
+    },
+    {
+        href: "https://medusajs.com/",
+        text: "Medusa",
     },
     {
         href: "https://firebase.google.com/",

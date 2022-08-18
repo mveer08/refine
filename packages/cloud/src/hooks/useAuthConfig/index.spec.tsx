@@ -1,27 +1,24 @@
-import { renderHook } from "@testing-library/react-hooks";
+import { renderHook, waitFor } from "@testing-library/react";
 
 import { useAuthConfig } from "./index";
 import { TestWrapper } from "@test";
 
 describe("useAuthConfig Hook", () => {
     it("get successfull auth configs", async () => {
-        const { result, waitForNextUpdate } = renderHook(
-            () => useAuthConfig(),
-            {
-                wrapper: TestWrapper({
-                    cloudConfig: {
-                        baseUrl: "demo.domain.com",
-                        clientId: "test",
-                    },
-                }),
-            },
-        );
+        const { result } = renderHook(() => useAuthConfig(), {
+            wrapper: TestWrapper({
+                cloudConfig: {
+                    baseUrl: "demo.domain.com",
+                    clientId: "test",
+                },
+            }),
+        });
 
-        await waitForNextUpdate();
+        await waitFor(() => {
+            expect(result.current.isSuccess).toBeTruthy();
+        });
 
-        const { data } = result.current;
-
-        expect(data).toEqual([
+        expect(result.current.data).toEqual([
             {
                 disableSignup: false,
                 name: "database",

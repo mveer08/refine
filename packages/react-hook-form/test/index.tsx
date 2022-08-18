@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { MemoryRouter } from "react-router-dom";
 import { Refine, DataProvider, IResourceItem } from "@pankod/refine-core";
 
@@ -10,7 +10,9 @@ interface ITestWrapperProps {
     routerInitialEntries?: string[];
 }
 
-export const TestWrapper: (props: ITestWrapperProps) => React.FC = ({
+export const TestWrapper: (
+    props: ITestWrapperProps,
+) => React.FC<{ children: ReactNode }> = ({
     dataProvider,
     resources,
     routerInitialEntries,
@@ -24,6 +26,13 @@ export const TestWrapper: (props: ITestWrapperProps) => React.FC = ({
                     routerProvider={MockRouterProvider}
                     resources={resources ?? [{ name: "posts" }]}
                     disableTelemetry={true}
+                    reactQueryClientConfig={{
+                        defaultOptions: {
+                            queries: {
+                                retry: false,
+                            },
+                        },
+                    }}
                 >
                     {children}
                 </Refine>

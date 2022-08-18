@@ -1,5 +1,303 @@
 # @pankod/refine-core
 
+## 3.58.1
+
+### Patch Changes
+
+-   `AuthProvider`'s `login` method can now return a value for `Remix`'s authentication flow
+
+## 3.58.0
+
+### Minor Changes
+
+-   Updated `reactQueryDevtoolConfig` prop type and added `false` option to disable the React Query Devtools.
+
+## 3.57.0
+
+### Minor Changes
+
+-   [#2311](https://github.com/pankod/refine/pull/2311) [`645391a3d9`](https://github.com/pankod/refine/commit/645391a3d985ab02c5a3d91813f1b4ec48e3a09b) Thanks [@aliemir](https://github.com/aliemir)! - Updated `reactQueryDevtoolConfig` prop type and added `false` option to disable the React Query Devtools.
+
+## 3.56.11
+
+### Patch Changes
+
+-   Fixed user-defined URL query parameters being deleted when using `syncWithLocation`
+
+## 3.56.10
+
+### Patch Changes
+
+-   Added [QueryFunctionContext](https://tanstack.com/query/v4/docs/guides/query-functions#queryfunctioncontext)'s values to `queryContext` in `metaData`.
+
+## 3.56.9
+
+### Patch Changes
+
+-   [#2294](https://github.com/pankod/refine/pull/2294) [`c67a232861`](https://github.com/pankod/refine/commit/c67a232861f5946920be18c0e57eee799bc77e23) Thanks [@salihozdemir](https://github.com/salihozdemir)! - Added [QueryFunctionContext](https://tanstack.com/query/v4/docs/guides/query-functions#queryfunctioncontext)'s values to `queryContext` in `metaData`.
+
+## 3.56.8
+
+### Patch Changes
+
+-   Fixed `@tanstack/react-query-devtools` dependency
+
+## 3.56.7
+
+### Patch Changes
+
+-   [`754da29b34`](https://github.com/pankod/refine/commit/754da29b34558dd51c266c1d9b7e68bf3a954697) Thanks [@omeraplak](https://github.com/omeraplak)! - Fixed `@tanstack/react-query-devtools` dependency
+
+## 3.56.6
+
+### Patch Changes
+
+-   Upgraded `react-query` version to 4.
+
+*   Updated the return value of `useGetIdentity`. When the `getUserIdentity` function is not defined, it returns `{}` instead of `undefined`.
+
+## 3.56.5
+
+### Patch Changes
+
+-   [#2260](https://github.com/pankod/refine/pull/2260) [`a97ec592df`](https://github.com/pankod/refine/commit/a97ec592dfb6dcf5b5bd063d2d76f50ca195c20e) Thanks [@salihozdemir](https://github.com/salihozdemir)! - Upgraded `react-query` version to 4.
+
+*   [#2260](https://github.com/pankod/refine/pull/2260) [`a97ec592df`](https://github.com/pankod/refine/commit/a97ec592dfb6dcf5b5bd063d2d76f50ca195c20e) Thanks [@salihozdemir](https://github.com/salihozdemir)! - Updated the return value of `useGetIdentity`. When the `getUserIdentity` function is not defined, it returns `{}` instead of `undefined`.
+
+## 3.56.4
+
+### Patch Changes
+
+-   Fix **useCan** hook params keys.
+
+    Since `react-query` stringifies the query keys, it will throw an error for a circular dependency if we include `React.ReactNode` elements inside the keys.
+    The feature in #2220(https://github.com/pankod/refine/issues/2220) includes such change and to fix this, we need to remove `icon` property in the `resource`
+
+*   Updated `<Refine/>` component with memoization to prevent unwanted effects.
+
+    -   Fixed the issue: `react-query`'s `queryClient` was re-initializing on every render which was causing it to reset the query cache.
+    -   Memoized the `notificationProvider` prop to prevent unnecessary re-renders.
+    -   Memoized the `resources` prop to prevent unnecessary transform calls on every render.
+
+-   -   Fixed Browser back navigation is broken with `syncWithLocation` and paginated `useTable` - #2276
+    -   Updated `push` and `replace` args of `useNavigation`
+
+## 3.56.3
+
+### Patch Changes
+
+-   [#2278](https://github.com/pankod/refine/pull/2278) [`8b11f8a267`](https://github.com/pankod/refine/commit/8b11f8a2679b403bfea75c448d31de7b6a90f3a9) Thanks [@biskuvit](https://github.com/biskuvit)! - Fix **useCan** hook params keys.
+
+    Since `react-query` stringifies the query keys, it will throw an error for a circular dependency if we include `React.ReactNode` elements inside the keys.
+    The feature in #2220(https://github.com/pankod/refine/issues/2220) includes such change and to fix this, we need to remove `icon` property in the `resource`
+
+*   [#2280](https://github.com/pankod/refine/pull/2280) [`e22cac6d8b`](https://github.com/pankod/refine/commit/e22cac6d8b3da3188545d9c0a614bb0f01f11f70) Thanks [@aliemir](https://github.com/aliemir)! - Updated `<Refine/>` component with memoization to prevent unwanted effects.
+
+    -   Fixed the issue: `react-query`'s `queryClient` was re-initializing on every render which was causing it to reset the query cache.
+    -   Memoized the `notificationProvider` prop to prevent unnecessary re-renders.
+    -   Memoized the `resources` prop to prevent unnecessary transform calls on every render.
+
+-   [#2279](https://github.com/pankod/refine/pull/2279) [`786fb08b8b`](https://github.com/pankod/refine/commit/786fb08b8be18153043f62e5f2cc1fd8ef76e728) Thanks [@omeraplak](https://github.com/omeraplak)! - - Fixed Browser back navigation is broken with `syncWithLocation` and paginated `useTable` - #2276
+    -   Updated `push` and `replace` args of `useNavigation`
+
+## 3.56.2
+
+### Patch Changes
+
+-   Fixed invalidation of authentication caches every time `checkAuth` is run
+
+## 3.56.1
+
+### Patch Changes
+
+-   [#2271](https://github.com/pankod/refine/pull/2271) [`40b84d35a3`](https://github.com/pankod/refine/commit/40b84d35a37fa2bf7fcb0f59de9745985b21fa6a) Thanks [@omeraplak](https://github.com/omeraplak)! - Fixed invalidation of authentication caches every time `checkAuth` is run
+
+## 3.56.0
+
+### Minor Changes
+
+-   Add React@18 support 🚀
+
+## 3.55.0
+
+### Minor Changes
+
+-   [#1718](https://github.com/pankod/refine/pull/1718) [`b38620d842`](https://github.com/pankod/refine/commit/b38620d84237e13212811daada7b49ee654c70eb) Thanks [@omeraplak](https://github.com/omeraplak)! - Add React@18 support 🚀
+
+## 3.54.0
+
+### Minor Changes
+
+-   Added config parameter to useCustomMutationHook to send headers.
+
+    ```
+    const apiUrl = useApiUrl();
+
+    const { mutate } = useCustomMutation<ICategory>();
+
+    mutate({
+        url: `${API_URL}/categories`,
+        method: "post",
+        values: {
+          title: "New Category",
+        },
+        config: {
+          headers: {
+              Authorization: "Bearer ****",
+          },
+        },
+    });
+    ```
+
+## 3.53.0
+
+### Minor Changes
+
+-   [#2245](https://github.com/pankod/refine/pull/2245) [`e949df7f1c`](https://github.com/pankod/refine/commit/e949df7f1cd8476c647b6511e0334156097408a0) Thanks [@yildirayunlu](https://github.com/yildirayunlu)! - Added config parameter to useCustomMutationHook to send headers.
+
+    ```
+    const apiUrl = useApiUrl();
+
+    const { mutate } = useCustomMutation<ICategory>();
+
+    mutate({
+        url: `${API_URL}/categories`,
+        method: "post",
+        values: {
+          title: "New Category",
+        },
+        config: {
+          headers: {
+              Authorization: "Bearer ****",
+          },
+        },
+    });
+    ```
+
+## 3.52.0
+
+### Minor Changes
+
+-   Added `useCustomMutation`hook for custom mutation requests.
+
+    ```tsx
+    import { useCustomMutation } from "@pankod/refine-core";
+    const { mutation } = useCustomMutation();
+
+    mutation({
+        url: "https://api.example.com/users",
+        method: "POST",
+        values: {
+            name: "John Doe",
+            email: "johndoe@mail.com",
+        },
+    });
+    ```
+
+## 3.51.0
+
+### Minor Changes
+
+-   [#2229](https://github.com/pankod/refine/pull/2229) [`878e9a105e`](https://github.com/pankod/refine/commit/878e9a105e582db0a2b0cbcddf4e6e196e94f632) Thanks [@yildirayunlu](https://github.com/yildirayunlu)! - Added `useCustomMutation`hook for custom mutation requests.
+
+    ```tsx
+    import { useCustomMutation } from "@pankod/refine-core";
+    const { mutation } = useCustomMutation();
+
+    mutation({
+        url: "https://api.example.com/users",
+        method: "POST",
+        values: {
+            name: "John Doe",
+            email: "johndoe@mail.com",
+        },
+    });
+    ```
+
+## 3.50.0
+
+### Minor Changes
+
+-   Pass the full `resource` to the `accessControlProvider` can method. This will enable Attribute Based Access Control (ABAC), for example granting permissions based on the value of a field in the resource object.
+
+    ```ts
+    const App: React.FC = () => {
+        <Refine
+            // other providers and props
+            accessControlProvider={{
+                can: async ({ resource, action, params }) => {
+                    if (resource === "posts" && action === "edit") {
+                        return Promise.resolve({
+                            can: false,
+                            reason: "Unauthorized",
+                        });
+                    }
+
+                    // or you can access directly *resource object
+                    // const resourceName = params?.resource?.name;
+                    // const anyUsefulOption = params?.resource?.options?.yourUsefulOption;
+                    // if (resourceName === "posts" && anyUsefulOption === true && action === "edit") {
+                    //     return Promise.resolve({
+                    //         can: false,
+                    //         reason: "Unauthorized",
+                    //     });
+                    // }
+
+                    return Promise.resolve({ can: true });
+                },
+            }}
+        />;
+    };
+    ```
+
+## 3.49.0
+
+### Minor Changes
+
+-   [#2222](https://github.com/pankod/refine/pull/2222) [`43e92b9785`](https://github.com/pankod/refine/commit/43e92b97854a1aea703ba2c04f95dcd5c6f4044d) Thanks [@omeraplak](https://github.com/omeraplak)! - Pass the full `resource` to the `accessControlProvider` can method. This will enable Attribute Based Access Control (ABAC), for example granting permissions based on the value of a field in the resource object.
+
+    ```ts
+    const App: React.FC = () => {
+        <Refine
+            // other providers and props
+            accessControlProvider={{
+                can: async ({ resource, action, params }) => {
+                    if (resource === "posts" && action === "edit") {
+                        return Promise.resolve({
+                            can: false,
+                            reason: "Unauthorized",
+                        });
+                    }
+
+                    // or you can access directly *resource object
+                    // const resourceName = params?.resource?.name;
+                    // const anyUsefulOption = params?.resource?.options?.yourUsefulOption;
+                    // if (resourceName === "posts" && anyUsefulOption === true && action === "edit") {
+                    //     return Promise.resolve({
+                    //         can: false,
+                    //         reason: "Unauthorized",
+                    //     });
+                    // }
+
+                    return Promise.resolve({ can: true });
+                },
+            }}
+        />;
+    };
+    ```
+
+## 3.48.0
+
+### Minor Changes
+
+-   All of the refine packages have dependencies on the `@pankod/refine-core` package. So far we have managed these dependencies with `peerDependencies` + `dependencies` but this causes issues like #2183. (having more than one @pankod/refine-core version in node_modules and creating different instances)
+
+    Managing as `peerDependencies` + `devDependencies` seems like the best way for now to avoid such issues.
+
+### Patch Changes
+
+-   Fix adding the current path to the `to` parameter when redirecting to the login page after `logout` - #2211
+
 ## 3.47.0
 
 ### Minor Changes

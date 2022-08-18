@@ -1,4 +1,4 @@
-import { renderHook } from "@testing-library/react-hooks";
+import { renderHook } from "@testing-library/react";
 import ReactRouterDom from "react-router-dom";
 
 import { MockJSONServer, TestWrapper } from "@test";
@@ -122,7 +122,7 @@ describe("useNavigation Hook", () => {
     it("navigation push", async () => {
         result.current.push("/posts");
 
-        expect(mHistory).toBeCalledWith("/posts", undefined);
+        expect(mHistory).toBeCalledWith("/posts");
     });
 
     it("navigation replace", async () => {

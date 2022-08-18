@@ -18,7 +18,8 @@ export const CustomSider: React.FC = () => {
     const { menuItems, selectedKey } = useMenu();
     const breakpoint = Grid.useBreakpoint();
 
-    const isMobile = !breakpoint.lg;
+    const isMobile =
+        typeof breakpoint.lg === "undefined" ? false : !breakpoint.lg;
 
     const renderTreeView = (tree: ITreeMenu[], selectedKey: string) => {
         return tree.map((item: ITreeMenu) => {
@@ -44,6 +45,7 @@ export const CustomSider: React.FC = () => {
                     key={route}
                     resource={name.toLowerCase()}
                     action="list"
+                    params={{ resource: item }}
                 >
                     <Menu.Item
                         key={route}

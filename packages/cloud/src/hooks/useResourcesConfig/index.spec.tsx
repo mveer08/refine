@@ -1,11 +1,11 @@
-import { renderHook } from "@testing-library/react-hooks";
+import { renderHook, waitFor } from "@testing-library/react";
 
 import { useResourcesConfig } from "./index";
 import { TestWrapper } from "@test";
 
 describe("useResourceConfig Hook", () => {
     it("get successfull resources configs", async () => {
-        const { result, waitForNextUpdate } = renderHook(
+        const { result } = renderHook(
             () =>
                 useResourcesConfig({
                     resourceName: "dev",
@@ -20,11 +20,11 @@ describe("useResourceConfig Hook", () => {
             },
         );
 
-        await waitForNextUpdate();
+        await waitFor(() => {
+            expect(result.current.isSuccess).toBeTruthy();
+        });
 
-        const { data } = result.current;
-
-        expect(data).toEqual([
+        expect(result.current.data).toEqual([
             {
                 name: "posts",
                 options: {

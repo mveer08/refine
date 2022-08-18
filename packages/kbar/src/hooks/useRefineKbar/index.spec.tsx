@@ -2,9 +2,7 @@ import React from "react";
 import { AccessControlProvider, IResourceItem } from "@pankod/refine-core";
 import { Route, Routes } from "react-router-dom";
 
-import { renderHook } from "@testing-library/react-hooks";
-
-import { act, TestWrapper } from "@test";
+import { act, TestWrapper, renderHook } from "@test";
 
 import { useRefineKbar } from ".";
 
@@ -26,7 +24,7 @@ describe("useRefineKbar Hook", () => {
         routerInitialEntries?: string[],
         accessControlProvider?: AccessControlProvider,
     ) => {
-        let Wrapper: React.FC = TestWrapper({
+        let Wrapper: React.FC<{ children: React.ReactNode }> = TestWrapper({
             resources,
         });
 
@@ -469,7 +467,7 @@ describe("useRefineKbar Hook", () => {
                 ["/posts/show/2"],
                 {
                     can: ({ params }) => {
-                        if (params.id === "1") {
+                        if (params?.id === "1") {
                             return Promise.resolve({ can: true });
                         }
                         return Promise.resolve({ can: false });
@@ -534,7 +532,7 @@ describe("useRefineKbar Hook", () => {
                 ["/posts/edit/1"],
                 {
                     can: ({ params }) => {
-                        if (params.id === "1") {
+                        if (params?.id === "1") {
                             return Promise.resolve({ can: true });
                         }
                         return Promise.resolve({ can: false });
@@ -623,7 +621,7 @@ describe("useRefineKbar Hook", () => {
                 ["/posts/edit/2"],
                 {
                     can: ({ params }) => {
-                        if (params.id === "1") {
+                        if (params?.id === "1") {
                             return Promise.resolve({ can: true });
                         }
                         return Promise.resolve({ can: false });
