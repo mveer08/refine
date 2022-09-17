@@ -1,5 +1,255 @@
 # @pankod/refine-antd
 
+## 3.46.0
+
+### Minor Changes
+
+-   Added `formProps` property support for AuthPage component
+
+    ## Usage
+
+    ```tsx
+    <AuthPage
+        type="login"
+        formProps={{
+            initialValues: {
+                email: "demo@refine.dev",
+                password: "demo",
+            },
+        }}
+    />
+    ```
+
+### Patch Changes
+
+-   Updated dependencies []:
+    -   @pankod/refine-ui-types@0.9.0
+
+## 3.45.0
+
+### Minor Changes
+
+-   [#2516](https://github.com/pankod/refine/pull/2516) [`ad99916d6d`](https://github.com/pankod/refine/commit/ad99916d6dbd181b857fd7df7b9619d8cac5e3e0) Thanks [@omeraplak](https://github.com/omeraplak)! - Added `formProps` property support for AuthPage component
+
+    ## Usage
+
+    ```tsx
+    <AuthPage
+        type="login"
+        formProps={{
+            initialValues: {
+                email: "demo@refine.dev",
+                password: "demo",
+            },
+        }}
+    />
+    ```
+
+### Patch Changes
+
+-   Updated dependencies [[`ad99916d6d`](https://github.com/pankod/refine/commit/ad99916d6dbd181b857fd7df7b9619d8cac5e3e0)]:
+    -   @pankod/refine-ui-types@0.8.0
+
+## 3.44.0
+
+### Minor Changes
+
+-   Added `render` prop to `Sider` component. You can get `dashboard`, `logout` and `items` from `render` props to customize the `Sider` component.
+
+-   Added `<AuthPage>` for Ant Design. `<AuthPage>` is a component that provides a login, register, reset password and update password pages.
+
+### Patch Changes
+
+-   Fixed version of react-router to `6.3.0`
+
+-   Passed `collapsed` prop to `render` method in `Sider` component of `@pankod/refine-antd`.
+
+-   Updated dependencies []:
+    -   @pankod/refine-ui-types@0.7.0
+
+## 3.43.1
+
+### Patch Changes
+
+-   [#2501](https://github.com/pankod/refine/pull/2501) [`4095a578d4`](https://github.com/pankod/refine/commit/4095a578d471254ee58412f130ac5a0f3a62880f) Thanks [@omeraplak](https://github.com/omeraplak)! - Fixed version of react-router to `6.3.0`
+
+## 3.43.0
+
+### Minor Changes
+
+-   [#2447](https://github.com/pankod/refine/pull/2447) [`628a37a675`](https://github.com/pankod/refine/commit/628a37a6753a778cbec5c29b698981e0157caa42) Thanks [@biskuvit](https://github.com/biskuvit)! - Added `<AuthPage>` for Ant Design. `<AuthPage>` is a component that provides a login, register, reset password and update password pages.
+
+### Patch Changes
+
+-   Updated dependencies [[`628a37a675`](https://github.com/pankod/refine/commit/628a37a6753a778cbec5c29b698981e0157caa42)]:
+    -   @pankod/refine-ui-types@0.6.2
+
+## 3.42.1
+
+### Patch Changes
+
+-   [#2492](https://github.com/pankod/refine/pull/2492) [`7d5bf3023d`](https://github.com/pankod/refine/commit/7d5bf3023d00617890ffa7f9d22b1116af15e0b9) Thanks [@ozkalai](https://github.com/ozkalai)! - Passed `collapsed` prop to `render` method in `Sider` component of `@pankod/refine-antd`.
+
+-   Updated dependencies [[`7d5bf3023d`](https://github.com/pankod/refine/commit/7d5bf3023d00617890ffa7f9d22b1116af15e0b9)]:
+    -   @pankod/refine-ui-types@0.6.1
+
+## 3.42.0
+
+### Minor Changes
+
+-   [#2454](https://github.com/pankod/refine/pull/2454) [`72487a4126`](https://github.com/pankod/refine/commit/72487a4126fb7d827dccd3bcbdee9a83aa1f56af) Thanks [@ozkalai](https://github.com/ozkalai)! - Added `render` prop to `Sider` component. You can get `dashboard`, `logout` and `items` from `render` props to customize the `Sider` component.
+
+### Patch Changes
+
+-   Updated dependencies [[`72487a4126`](https://github.com/pankod/refine/commit/72487a4126fb7d827dccd3bcbdee9a83aa1f56af)]:
+    -   @pankod/refine-ui-types@0.6.0
+
+## 3.41.0
+
+### Minor Changes
+
+-   Added support nested sorting
+
+## 3.40.0
+
+### Minor Changes
+
+-   [#2427](https://github.com/pankod/refine/pull/2427) [`b21908e872`](https://github.com/pankod/refine/commit/b21908e87209c3a8825991c6ab829f7c45c19e9b) Thanks [@geoffatsource](https://github.com/geoffatsource)! - Added support nested sorting
+
+## 3.39.0
+
+### Minor Changes
+
+-   Update type declaration generation with `tsc` instead of `tsup` for better navigation throughout projects source code.
+
+### Patch Changes
+
+-   Updated dependencies []:
+    -   @pankod/refine-ui-types@0.5.0
+
+## 3.38.0
+
+### Minor Changes
+
+-   [#2440](https://github.com/pankod/refine/pull/2440) [`0150dcd070`](https://github.com/pankod/refine/commit/0150dcd0700253f1c4908e7e5f2e178bb122e9af) Thanks [@aliemir](https://github.com/aliemir)! - Update type declaration generation with `tsc` instead of `tsup` for better navigation throughout projects source code.
+
+### Patch Changes
+
+-   Updated dependencies [[`0150dcd070`](https://github.com/pankod/refine/commit/0150dcd0700253f1c4908e7e5f2e178bb122e9af), [`0150dcd070`](https://github.com/pankod/refine/commit/0150dcd0700253f1c4908e7e5f2e178bb122e9af)]:
+    -   @pankod/refine-ui-types@0.4.0
+
+## 3.37.11
+
+### Patch Changes
+
+-   Fix: `useStepsForm`'s `submit` function can be overridden
+
+## 3.37.10
+
+### Patch Changes
+
+-   Fix: `useStepsForm`'s `submit` function can be overridden
+
+## 3.37.9
+
+### Patch Changes
+
+-   [#2421](https://github.com/pankod/refine/pull/2421) [`2b1c5e01b0`](https://github.com/pankod/refine/commit/2b1c5e01b0f65b2c7558ba79539fab411480cc06) Thanks [@omeraplak](https://github.com/omeraplak)! - Fix: `useStepsForm`'s `submit` function can be overridden
+
+## 3.37.8
+
+### Patch Changes
+
+-   Fix: Wrap with [`<CanAccess />`](https://refine.dev/docs/core/components/accessControl/can-access/) component to parent sider items
+
+    ```tsx
+    <Refine
+        accessControlProvider={{
+            can: async ({ action, resource }) => {
+                // console.log({ action, resource });
+                // output: {action: "list", resource: "cms" }
+
+                return { can: true };
+            },
+        }}
+        resources={[
+            {
+                name: "CMS",
+            },
+            {
+                name: "posts",
+                parentName: "CMS",
+                list: PostList,
+            },
+        ]}
+    />
+    ```
+
+## 3.37.7
+
+### Patch Changes
+
+-   [#2411](https://github.com/pankod/refine/pull/2411) [`c61470a2e0`](https://github.com/pankod/refine/commit/c61470a2e00df94a211395541601fd39b63e2cff) Thanks [@omeraplak](https://github.com/omeraplak)! - Fix: Wrap with [`<CanAccess />`](https://refine.dev/docs/core/components/accessControl/can-access/) component to parent sider items
+
+    ```tsx
+    <Refine
+        accessControlProvider={{
+            can: async ({ action, resource }) => {
+                // console.log({ action, resource });
+                // output: {action: "list", resource: "cms" }
+
+                return { can: true };
+            },
+        }}
+        resources={[
+            {
+                name: "CMS",
+            },
+            {
+                name: "posts",
+                parentName: "CMS",
+                list: PostList,
+            },
+        ]}
+    />
+    ```
+
+## 3.37.6
+
+### Patch Changes
+
+-   Fix `useModalForm` hook reset issue after successful submit
+
+## 3.37.5
+
+### Patch Changes
+
+-   [#2403](https://github.com/pankod/refine/pull/2403) [`ef8622cba3`](https://github.com/pankod/refine/commit/ef8622cba32acc8f5edf9e4190fbe90d99e642c6) Thanks [@omeraplak](https://github.com/omeraplak)! - Fix `useModalForm` hook reset issue after successful submit
+
+## 3.37.4
+
+### Patch Changes
+
+-   Updated `<Edit/>` component's default footer buttons property wrapper with `<Space/>` component like `<Footer>
+
+## 3.37.3
+
+### Patch Changes
+
+-   Updated `<Edit/>` component's default footer buttons property wrapper with `<Space/>` component like `<Footer>
+
+## 3.37.2
+
+### Patch Changes
+
+-   Updated `<Edit/>` component's default footer buttons property wrapper with `<Space/>` component like `<Footer>
+
+## 3.37.1
+
+### Patch Changes
+
+-   [#2343](https://github.com/pankod/refine/pull/2343) [`90b39d4f83`](https://github.com/pankod/refine/commit/90b39d4f839dc97868b7126ffb2903e29b8bb51a) Thanks [@aliemir](https://github.com/aliemir)! - Updated `<Edit/>` component's default footer buttons property wrapper with `<Space/>` component like `<Footer>
+
 ## 3.37.0
 
 ### Minor Changes

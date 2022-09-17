@@ -4,7 +4,8 @@ description: How to implement Google and GitHub authentications using NextAuth.j
 slug: nextauth-google-github-authentication-nextjs
 authors: ekekenta_clinton
 tags: [nextjs, nextauth, github-authentication, google-authentication, oauth]
-image: https://refine.dev/img/refine_social.png
+image: /img/blog/2022-08-18-auth-with-nextauth/social.png
+social_image: /img/blog/2022-08-18-auth-with-nextauth/social.png
 hide_table_of_contents: false
 ---
 
@@ -259,6 +260,13 @@ GOOGLE_CLIENT_SECRET=YOUR_CLIENT_SECRET
 NEXTAUTH_URL=http://localhost:3000
 NEXTAUTH_SECRET=YOUR_SECRET
 ```
+
+<br/>
+<div>
+<a href="https://github.com/pankod/refine">
+  <img  src="https://refine.dev/img/github-support-banner.png" alt="github support banner" />
+</a>
+</div>
 
 ### For GithubProvider (you will need a GitHub account):
 
@@ -659,6 +667,14 @@ In the above code snippet, we imported the `unstable_getServerSession` method an
 
 ## Conclusion
 Throughout this tutorial, we've implemented how to add Google and GitHub authentication to a Nextjs application using NextAuth. We started by knowing what NextAuth is and why you should use it. Then we built a blog application for the demonstration. Now that you have the knowledge you seek, how would you add authentication to your next Nextjs project? Perhaps you can learn more about NextAuth from the [documentation](https://next-auth.js.org/).
+
+<br/>
+<div>
+<a href="https://discord.gg/refine">
+  <img  src="https://refine.dev/img/discord-banner.png" alt="discord banner" />
+</a>
+</div>
+
 
 ## Build your React-based CRUD applications without constraints
 

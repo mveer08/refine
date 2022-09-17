@@ -1,5 +1,93 @@
 # @pankod/refine-hasura
 
+## 4.11.2
+
+### Patch Changes
+
+-   Added nested sorting feature 💥
+
+*   Added new CRUD Filter Operators with undefined
+
+## 4.11.1
+
+### Patch Changes
+
+-   [#2427](https://github.com/pankod/refine/pull/2427) [`b21908e872`](https://github.com/pankod/refine/commit/b21908e87209c3a8825991c6ab829f7c45c19e9b) Thanks [@geoffatsource](https://github.com/geoffatsource)! - Added nested sorting feature 💥
+
+*   [#2456](https://github.com/pankod/refine/pull/2456) [`f20a0ed621`](https://github.com/pankod/refine/commit/f20a0ed621f9f038dce762e75a0a99058bcb4edb) Thanks [@workatease](https://github.com/workatease)! - Added new CRUD Filter Operators with undefined
+
+## 4.11.0
+
+### Minor Changes
+
+-   Update type declaration generation with `tsc` instead of `tsup` for better navigation throughout projects source code.
+
+## 4.10.0
+
+### Minor Changes
+
+-   [#2440](https://github.com/pankod/refine/pull/2440) [`0150dcd070`](https://github.com/pankod/refine/commit/0150dcd0700253f1c4908e7e5f2e178bb122e9af) Thanks [@aliemir](https://github.com/aliemir)! - Update type declaration generation with `tsc` instead of `tsup` for better navigation throughout projects source code.
+
+## 4.9.4
+
+### Patch Changes
+
+-   -   `lodash` moved to "dependencies" for CommonJS builds
+
+## 4.9.3
+
+### Patch Changes
+
+-   -   `lodash` moved to "dependencies" for CommonJS builds
+
+## 4.9.2
+
+### Patch Changes
+
+-   -   `lodash` moved to "dependencies" for CommonJS builds
+
+## 4.9.1
+
+### Patch Changes
+
+-   [#2366](https://github.com/pankod/refine/pull/2366) [`de87f13dad`](https://github.com/pankod/refine/commit/de87f13dadabc3de947534988abfbb2ff6263ca4) Thanks [@omeraplak](https://github.com/omeraplak)! - - `lodash` moved to "dependencies" for CommonJS builds
+
+## 4.9.0
+
+### Minor Changes
+
+-   Add nested filter support to `Hasura` data provider.
+
+    Example usage:
+
+    ```
+    filters: [
+        {
+            field: "category.id",
+            operator: "eq",
+            value: "8332c138-3231-406d-9655-1328ded9d5f2",
+        },
+    ],
+    ```
+
+## 4.8.0
+
+### Minor Changes
+
+-   [#2347](https://github.com/pankod/refine/pull/2347) [`628324d950`](https://github.com/pankod/refine/commit/628324d95090172bc5921cce251c79696183079a) Thanks [@ozkalai](https://github.com/ozkalai)! - Add nested filter support to `Hasura` data provider.
+
+    Example usage:
+
+    ```
+    filters: [
+        {
+            field: "category.id",
+            operator: "eq",
+            value: "8332c138-3231-406d-9655-1328ded9d5f2",
+        },
+    ],
+    ```
+
 ## 4.7.0
 
 ### Minor Changes

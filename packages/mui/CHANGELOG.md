@@ -1,5 +1,186 @@
 # @pankod/refine-mui
 
+## 3.45.2
+
+### Patch Changes
+
+-   Updated dependencies []:
+    -   @pankod/refine-ui-types@0.9.0
+
+## 3.45.1
+
+### Patch Changes
+
+-   Updated dependencies [[`ad99916d6d`](https://github.com/pankod/refine/commit/ad99916d6dbd181b857fd7df7b9619d8cac5e3e0)]:
+    -   @pankod/refine-ui-types@0.8.0
+
+## 3.45.0
+
+### Minor Changes
+
+-   Added `render` prop to `Sider` component. You can get `dashboard`, `logout` and `items` from `render` props to customize the `Sider` component.
+
+### Patch Changes
+
+-   Fixed version of react-router to `6.3.0`
+
+-   Passed `collapsed` prop to `render` method in `Sider` component of `@pankod/refine-mui`.
+
+-   Updated dependencies []:
+    -   @pankod/refine-react-hook-form@3.33.2
+    -   @pankod/refine-ui-types@0.7.0
+
+## 3.44.2
+
+### Patch Changes
+
+-   [#2501](https://github.com/pankod/refine/pull/2501) [`4095a578d4`](https://github.com/pankod/refine/commit/4095a578d471254ee58412f130ac5a0f3a62880f) Thanks [@omeraplak](https://github.com/omeraplak)! - Fixed version of react-router to `6.3.0`
+
+-   Updated dependencies [[`4095a578d4`](https://github.com/pankod/refine/commit/4095a578d471254ee58412f130ac5a0f3a62880f)]:
+    -   @pankod/refine-react-hook-form@3.33.1
+
+## 3.44.1
+
+### Patch Changes
+
+-   [#2492](https://github.com/pankod/refine/pull/2492) [`7d5bf3023d`](https://github.com/pankod/refine/commit/7d5bf3023d00617890ffa7f9d22b1116af15e0b9) Thanks [@ozkalai](https://github.com/ozkalai)! - Passed `collapsed` prop to `render` method in `Sider` component of `@pankod/refine-mui`.
+
+-   Updated dependencies [[`7d5bf3023d`](https://github.com/pankod/refine/commit/7d5bf3023d00617890ffa7f9d22b1116af15e0b9)]:
+    -   @pankod/refine-ui-types@0.6.1
+
+## 3.44.0
+
+### Minor Changes
+
+-   [#2454](https://github.com/pankod/refine/pull/2454) [`72487a4126`](https://github.com/pankod/refine/commit/72487a4126fb7d827dccd3bcbdee9a83aa1f56af) Thanks [@ozkalai](https://github.com/ozkalai)! - Added `render` prop to `Sider` component. You can get `dashboard`, `logout` and `items` from `render` props to customize the `Sider` component.
+
+### Patch Changes
+
+-   Updated dependencies [[`72487a4126`](https://github.com/pankod/refine/commit/72487a4126fb7d827dccd3bcbdee9a83aa1f56af)]:
+    -   @pankod/refine-ui-types@0.6.0
+
+## 3.43.0
+
+### Minor Changes
+
+-   Update type declaration generation with `tsc` instead of `tsup` for better navigation throughout projects source code.
+
+### Patch Changes
+
+-   Update `ThemeProvider` export as value instead of type.
+
+-   Updated dependencies []:
+    -   @pankod/refine-react-hook-form@3.33.0
+    -   @pankod/refine-ui-types@0.5.0
+
+## 3.42.0
+
+### Minor Changes
+
+-   [#2440](https://github.com/pankod/refine/pull/2440) [`0150dcd070`](https://github.com/pankod/refine/commit/0150dcd0700253f1c4908e7e5f2e178bb122e9af) Thanks [@aliemir](https://github.com/aliemir)! - Update type declaration generation with `tsc` instead of `tsup` for better navigation throughout projects source code.
+
+### Patch Changes
+
+-   [#2440](https://github.com/pankod/refine/pull/2440) [`0150dcd070`](https://github.com/pankod/refine/commit/0150dcd0700253f1c4908e7e5f2e178bb122e9af) Thanks [@aliemir](https://github.com/aliemir)! - Update `ThemeProvider` export as value instead of type.
+
+-   Updated dependencies [[`0150dcd070`](https://github.com/pankod/refine/commit/0150dcd0700253f1c4908e7e5f2e178bb122e9af), [`0150dcd070`](https://github.com/pankod/refine/commit/0150dcd0700253f1c4908e7e5f2e178bb122e9af)]:
+    -   @pankod/refine-react-hook-form@3.32.0
+    -   @pankod/refine-ui-types@0.4.0
+
+## 3.41.16
+
+### Patch Changes
+
+-   Fix: Wrap with [`<CanAccess />`](https://refine.dev/docs/core/components/accessControl/can-access/) component to parent sider items
+
+    ```tsx
+    <Refine
+        accessControlProvider={{
+            can: async ({ action, resource }) => {
+                // console.log({ action, resource });
+                // output: {action: "list", resource: "cms" }
+
+                return { can: true };
+            },
+        }}
+        resources={[
+            {
+                name: "CMS",
+            },
+            {
+                name: "posts",
+                parentName: "CMS",
+                list: PostList,
+            },
+        ]}
+    />
+    ```
+
+## 3.41.15
+
+### Patch Changes
+
+-   [#2411](https://github.com/pankod/refine/pull/2411) [`c61470a2e0`](https://github.com/pankod/refine/commit/c61470a2e00df94a211395541601fd39b63e2cff) Thanks [@omeraplak](https://github.com/omeraplak)! - Fix: Wrap with [`<CanAccess />`](https://refine.dev/docs/core/components/accessControl/can-access/) component to parent sider items
+
+    ```tsx
+    <Refine
+        accessControlProvider={{
+            can: async ({ action, resource }) => {
+                // console.log({ action, resource });
+                // output: {action: "list", resource: "cms" }
+
+                return { can: true };
+            },
+        }}
+        resources={[
+            {
+                name: "CMS",
+            },
+            {
+                name: "posts",
+                parentName: "CMS",
+                list: PostList,
+            },
+        ]}
+    />
+    ```
+
+## 3.41.14
+
+### Patch Changes
+
+-   -   `lodash` moved to "dependencies" for CommonJS builds
+
+## 3.41.13
+
+### Patch Changes
+
+-   -   `lodash` moved to "dependencies" for CommonJS builds
+
+## 3.41.12
+
+### Patch Changes
+
+-   -   `lodash` moved to "dependencies" for CommonJS builds
+
+## 3.41.11
+
+### Patch Changes
+
+-   [#2366](https://github.com/pankod/refine/pull/2366) [`de87f13dad`](https://github.com/pankod/refine/commit/de87f13dadabc3de947534988abfbb2ff6263ca4) Thanks [@omeraplak](https://github.com/omeraplak)! - - `lodash` moved to "dependencies" for CommonJS builds
+
+## 3.41.10
+
+### Patch Changes
+
+-   `lodash` moved to dependencies.
+
+## 3.41.9
+
+### Patch Changes
+
+-   [#2350](https://github.com/pankod/refine/pull/2350) [`f8e5d99598`](https://github.com/pankod/refine/commit/f8e5d99598265af434f25fde104fafc9b7cac792) Thanks [@ozkalai](https://github.com/ozkalai)! - `lodash` moved to dependencies.
+
 ## 3.41.8
 
 ### Patch Changes

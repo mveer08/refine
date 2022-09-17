@@ -41,8 +41,13 @@ export const NextRouteComponent: React.FC<NextRouteComponentProps> = ({
 
     const isServer = typeof window !== "undefined";
 
+    const renderLoginRouteElement = (): JSX.Element => {
+        if (LoginPage) return <LoginPage />;
+        return <DefaultLoginPage />;
+    };
+
     if (routeResourceName === "login") {
-        return LoginPage ? <LoginPage /> : <DefaultLoginPage />;
+        return renderLoginRouteElement();
     }
 
     if (pathname === "/") {
@@ -57,7 +62,7 @@ export const NextRouteComponent: React.FC<NextRouteComponentProps> = ({
                             resource,
                         }}
                     >
-                        <DashboardPage />
+                        <DashboardPage initialData={initialData} {...rest} />
                     </CanAccess>
                 </LayoutWrapper>
             );

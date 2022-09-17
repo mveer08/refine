@@ -1,5 +1,518 @@
 # @pankod/refine-core
 
+## 3.69.9
+
+### Patch Changes
+
+-   Add register function to `AuthContextProvider` for invalidate auth store queries.
+
+-   Fixed version of react-router to `6.3.0`
+
+## 3.69.8
+
+### Patch Changes
+
+-   [#2501](https://github.com/pankod/refine/pull/2501) [`4095a578d4`](https://github.com/pankod/refine/commit/4095a578d471254ee58412f130ac5a0f3a62880f) Thanks [@omeraplak](https://github.com/omeraplak)! - Fixed version of react-router to `6.3.0`
+
+## 3.69.7
+
+### Patch Changes
+
+-   [#2447](https://github.com/pankod/refine/pull/2447) [`628a37a675`](https://github.com/pankod/refine/commit/628a37a6753a778cbec5c29b698981e0157caa42) Thanks [@biskuvit](https://github.com/biskuvit)! - Add register function to `AuthContextProvider` for invalidate auth store queries.
+
+## 3.69.6
+
+### Patch Changes
+
+-   Fix import of react-query `DevtoolsOptions` interface
+
+## 3.69.5
+
+### Patch Changes
+
+-   [#2481](https://github.com/pankod/refine/pull/2481) [`7820454ae7`](https://github.com/pankod/refine/commit/7820454ae71ff56d032a561389e99ff567812851) Thanks [@omeraplak](https://github.com/omeraplak)! - Fix import of react-query `DevtoolsOptions` interface
+
+## 3.69.4
+
+### Patch Changes
+
+-   Fixed default login page for headless
+
+## 3.69.3
+
+### Patch Changes
+
+-   [#2475](https://github.com/pankod/refine/pull/2475) [`fc859677d9`](https://github.com/pankod/refine/commit/fc859677d980bd787c084736fb23552e958d0505) Thanks [@omeraplak](https://github.com/omeraplak)! - Fixed default login page for headless
+
+## 3.69.2
+
+### Patch Changes
+
+-   Update `useForm` and `useShow` hooks to watch for `id` from `props` and update the query with the new `id` when it changes.
+
+## 3.69.1
+
+### Patch Changes
+
+-   [#2467](https://github.com/pankod/refine/pull/2467) [`21bb649bc7`](https://github.com/pankod/refine/commit/21bb649bc737a13479254dfdedc91f904e9144b0) Thanks [@aliemir](https://github.com/aliemir)! - Update `useForm` and `useShow` hooks to watch for `id` from `props` and update the query with the new `id` when it changes.
+
+## 3.69.0
+
+### Minor Changes
+
+-   Adding more CRUD Filter Operators
+
+*   Add `initialData` support to `DashboardPage` for `@pankod/refine-nextjs-router`.
+
+## 3.68.0
+
+### Minor Changes
+
+-   [#2456](https://github.com/pankod/refine/pull/2456) [`f20a0ed621`](https://github.com/pankod/refine/commit/f20a0ed621f9f038dce762e75a0a99058bcb4edb) Thanks [@workatease](https://github.com/workatease)! - Adding more CRUD Filter Operators
+
+*   [#2142](https://github.com/pankod/refine/pull/2142) [`dd00de215a`](https://github.com/pankod/refine/commit/dd00de215a869a11076a539227de9dc1de731a55) Thanks [@ozkalai](https://github.com/ozkalai)! - Add `initialData` support to `DashboardPage` for `@pankod/refine-nextjs-router`.
+
+## 3.67.0
+
+### Minor Changes
+
+-   Updated the generation of type declarations, moved the declarations from `tsup` to `tsc` for a better experience with `Peek Definition` and `Go to Definition` features. After this change, it's expected to navigate to the source code of the `refine` packages instead of the `dist` directory with combined declarations.
+
+*   Removed `jose` dependency.
+
+-   Remove `decamelize` dependency from `humanizeString` helper and replace the functionality with regExp.
+
+### Patch Changes
+
+-   Fixed the issue with the TS compiler and `useResource` hooks return type.
+
+*   Pass `dataProviderName` prop to mutations in `@pankod/refine-core`'s `useImport` hook.
+
+## 3.66.1
+
+### Patch Changes
+
+-   [#2448](https://github.com/pankod/refine/pull/2448) [`f1edb19979`](https://github.com/pankod/refine/commit/f1edb199793b89dd231d2ab8d1ffed3ee63dce70) Thanks [@aliemir](https://github.com/aliemir)! - Pass `dataProviderName` prop to mutations in `@pankod/refine-core`'s `useImport` hook.
+
+## 3.66.0
+
+### Minor Changes
+
+-   [#2440](https://github.com/pankod/refine/pull/2440) [`0150dcd070`](https://github.com/pankod/refine/commit/0150dcd0700253f1c4908e7e5f2e178bb122e9af) Thanks [@aliemir](https://github.com/aliemir)! - Updated the generation of type declarations, moved the declarations from `tsup` to `tsc` for a better experience with `Peek Definition` and `Go to Definition` features. After this change, it's expected to navigate to the source code of the `refine` packages instead of the `dist` directory with combined declarations.
+
+*   [#2439](https://github.com/pankod/refine/pull/2439) [`f2faf99f25`](https://github.com/pankod/refine/commit/f2faf99f25542f73215ee89c74b241311177b327) Thanks [@yildirayunlu](https://github.com/yildirayunlu)! - Removed `jose` dependency.
+
+-   [#2443](https://github.com/pankod/refine/pull/2443) [`2c428b3105`](https://github.com/pankod/refine/commit/2c428b31057e3e7c8901fc3da2773bc810235491) Thanks [@ozkalai](https://github.com/ozkalai)! - Remove `decamelize` dependency from `humanizeString` helper and replace the functionality with regExp.
+
+### Patch Changes
+
+-   [#2440](https://github.com/pankod/refine/pull/2440) [`0150dcd070`](https://github.com/pankod/refine/commit/0150dcd0700253f1c4908e7e5f2e178bb122e9af) Thanks [@aliemir](https://github.com/aliemir)! - Fixed the issue with the TS compiler and `useResource` hooks return type.
+
+## 3.65.3
+
+### Patch Changes
+
+-   Fixed, `loginLink` and `registerLink` texts and remove unnecessary props from forms
+
+*   Fixed syncWithLocation not tracking when useTable filters were reset
+
+## 3.65.2
+
+### Patch Changes
+
+-   [#2435](https://github.com/pankod/refine/pull/2435) [`bdf32c6cf9`](https://github.com/pankod/refine/commit/bdf32c6cf935adbe2f7a23d4473978485922d8f0) Thanks [@omeraplak](https://github.com/omeraplak)! - Fixed syncWithLocation not tracking when useTable filters were reset
+
+## 3.65.1
+
+### Patch Changes
+
+-   [#2433](https://github.com/pankod/refine/pull/2433) [`3ce29dda52`](https://github.com/pankod/refine/commit/3ce29dda52772aaacfb38f4a33155fd23c52c833) Thanks [@biskuvit](https://github.com/biskuvit)! - Fixed, `loginLink` and `registerLink` texts and remove unnecessary props from forms
+
+## 3.65.0
+
+### Minor Changes
+
+-   🎉 Added `AuthPage` component to the `refine` app. This page is used to login, register, reset password and update password. Login page is default page and old `LoginPage` component is deprecated.
+
+    # New Auth Hooks
+
+    📌 Added `useRegister` hook. This hook is used to register new user. `useRegister` falls into register function of [`AuthProvider`](https://refine.dev/docs/core/providers/auth-provider/).
+
+    📌 Added `useResetPassword` hook. This hook is used to reset password. `useResetPassword` falls into `resetPassword` function of [`AuthProvider`](https://refine.dev/docs/core/providers/auth-provider/).
+
+    📌 Added `useUpdatePassword` hook. This hook is used to update password. `useUpdatePassword` falls into `updatePassword` function of [`AuthProvider`](https://refine.dev/docs/core/providers/auth-provider/).
+
+    ```diff
+    - <LoginPage>
+    + <AuthPage>
+    ```
+
+    # New `AuthPage` props:
+
+    ```info
+    interface IAuthPageProps extends IAuthCommonProps {
+        type?: "login" | "register" | "resetPassword" | "updatePassword";
+    }
+
+    interface IAuthCommonProps {
+        submitButton?: React.ReactNode;
+        registerLink?: React.ReactNode;
+        loginLink?: React.ReactNode;
+        resetPasswordLink?: React.ReactNode;
+        updatePasswordLink?: React.ReactNode;
+        backLink?: React.ReactNode;
+        providers?: IProvider[];
+    }
+
+    interface IProvider {
+        name: string;
+        icon?: React.ReactNode;
+        label?: string;
+    }
+    ```
+
+### Patch Changes
+
+-   Fixed `<AuthPage>` by adding missing props to "login" and "register" pages.
+
+    Fixed `<Refine>` component `LoginPage` property.
+
+## 3.64.2
+
+### Patch Changes
+
+-   [#2415](https://github.com/pankod/refine/pull/2415) [`f7c98f0ef9`](https://github.com/pankod/refine/commit/f7c98f0ef9743fbee2cc44206548cf2da3ceb01c) Thanks [@biskuvit](https://github.com/biskuvit)! - Fixed `<AuthPage>` by adding missing props to "login" and "register" pages.
+
+    Fixed `<Refine>` component `LoginPage` property.
+
+## 3.64.1
+
+### Patch Changes
+
+-   [#2299](https://github.com/pankod/refine/pull/2299) [`a02cb9e8ef`](https://github.com/pankod/refine/commit/a02cb9e8ef20f14194d772720442208930e3aa40) Thanks [@biskuvit](https://github.com/biskuvit)! - 🎉 Added `AuthPage` to the `refine` app. This page is used to login, register, reset password and update password. Login page is default page and old `LoginPage` component is deprecated.
+
+    # New Auth Hooks
+
+    📌 Added `useRegister` hook. This hook is used to register new user. `useRegister` falls into register function of [`AuthProvider`](https://refine.dev/docs/core/providers/auth-provider/).
+
+    📌 Added `useResetPassword` hook. This hook is used to reset password. `useResetPassword` falls into `resetPassword` function of [`AuthProvider`](https://refine.dev/docs/core/providers/auth-provider/).
+
+    📌 Added `useUpdatePassword` hook. This hook is used to update password. `useUpdatePassword` falls into `updatePassword` function of [`AuthProvider`](https://refine.dev/docs/core/providers/auth-provider/).
+
+    ```diff
+    - <LoginPage>
+    + <AuthPage>
+    ```
+
+    # New `AuthPage` props:
+
+    ```info
+    interface IAuthPageProps extends IAuthCommonProps {
+        type?: "login" | "register" | "resetPassword" | "updatePassword";
+    }
+
+    interface IAuthCommonProps {
+        registerLink?: React.ReactNode;
+        loginLink?: React.ReactNode;
+        resetPasswordLink?: React.ReactNode;
+        updatePasswordLink?: React.ReactNode;
+        backLink?: React.ReactNode;
+        providers?: IProvider[];
+    }
+
+    interface IProvider {
+        name: string;
+        icon?: React.ReactNode;
+        label?: string;
+    }
+    ```
+
+    # Add `AuthPage` as a default page to Routers
+
+    📌 Added `AuthPage` to the `refine-nextjs-router`. Default page is `AuthPage`.
+
+    📌 Added `AuthPage` to the `refine-react-location`. Default page is `AuthPage`.
+
+    📌 Added `AuthPage` to the `refine-react-router-v6`. Default page is `AuthPage`.
+
+    📌 Added `AuthPage` to the `refine-remix-router`. Default page is `AuthPage`.
+
+## 3.64.0
+
+### Minor Changes
+
+-   Add an option to hide `resources` from the `Sider` menu
+
+    ```tsx
+    <Refine
+        ...
+        ...
+        resources={[
+            {
+                name: "posts",
+                list: PostList,
+                options: {
+                    hide: true,
+                },
+            },
+        ]}
+    />
+    ```
+
+*   Add object path syntax support for the useSelect hook
+
+    ```tsx
+    useSelect({
+        resource: "posts",
+        optionLabel: "nested.title",
+        optionLabel: "nested.id",
+    });
+    ```
+
+## 3.63.0
+
+### Minor Changes
+
+-   [#2391](https://github.com/pankod/refine/pull/2391) [`e530670c2d`](https://github.com/pankod/refine/commit/e530670c2d5f6e8a734a37770d1f1c89fb0b81b5) Thanks [@omeraplak](https://github.com/omeraplak)! - Add an option to hide `resources` from the `Sider` menu
+
+    ```tsx
+    <Refine
+        ...
+        ...
+        resources={[
+            {
+                name: "posts",
+                list: PostList,
+                options: {
+                    hide: true,
+                },
+            },
+        ]}
+    />
+    ```
+
+*   [#2395](https://github.com/pankod/refine/pull/2395) [`3019fae7a0`](https://github.com/pankod/refine/commit/3019fae7a00c4fe9d3f17639e0129bd336e42aef) Thanks [@omeraplak](https://github.com/omeraplak)! - Add object path syntax support for the useSelect hook
+
+    ```tsx
+    useSelect({
+        resource: "posts",
+        optionLabel: "nested.title",
+        optionLabel: "nested.id",
+    });
+    ```
+
+## 3.62.1
+
+### Patch Changes
+
+-   fix redirectPage return value #2377
+
+## 3.62.0
+
+### Minor Changes
+
+-   Added a new `<Refine>` component property: `options`.
+
+    Previously, the options were passed as a property to the `<Refine>` component. Now, the options are passed to the `<Refine>` via `options` property like this:
+
+    ```diff
+        <Refine
+    -       mutationMode="undoable"
+    -       undoableTimeout={5000}
+    -       warnWhenUnsavedChanges
+    -       syncWithLocation
+    -       liveMode="off"
+    -       disableTelemetry={false}
+    +       options={{
+    +           mutationMode: "undoable",
+    +           undoableTimeout: 5000,
+    +           warnWhenUnsavedChanges: true,
+    +           syncWithLocation: true,
+    +           liveMode: "off",
+    +           disableTelemetry: false,
+    +       }}
+        />
+    ```
+
+*   Added a new redirect feature. It is now possible to set default redirects.
+
+    By default, when a form is submitted, it will redirect to the "list" page of the current resource. You can change this behavior by setting the `redirect` parameter like this:
+
+    ```tsx
+    <Refine
+        ...
+        options={{ redirect: { afterCreate: "show", afterClone: "edit", afterEdit: false }, }}
+    />
+    ```
+
+### Patch Changes
+
+-   -   `lodash` moved to "dependencies" for CommonJS builds
+
+*   -   Fixed `lodash-es` usage for ESM builds
+
+## 3.61.1
+
+### Patch Changes
+
+-   [#2377](https://github.com/pankod/refine/pull/2377) [`c62fb114b1`](https://github.com/pankod/refine/commit/c62fb114b1e0ea3e246e33809bbb64ada1db25b2) Thanks [@alicanerdurmaz](https://github.com/alicanerdurmaz)! - fix redirectPage return value #2377
+
+## 3.61.0
+
+### Minor Changes
+
+-   Added a new `<Refine>` component property: `options`.
+
+    Previously, the options were passed as a property to the `<Refine>` component. Now, the options are passed to the `<Refine>` via `options` property like this:
+
+    ```diff
+        <Refine
+    -       mutationMode="undoable"
+    -       undoableTimeout={5000}
+    -       warnWhenUnsavedChanges
+    -       syncWithLocation
+    -       liveMode="off"
+    -       disableTelemetry={false}
+    +       options={{
+    +           mutationMode: "undoable",
+    +           undoableTimeout: 5000,
+    +           warnWhenUnsavedChanges: true,
+    +           syncWithLocation: true,
+    +           liveMode: "off",
+    +           disableTelemetry: false,
+    +       }}
+        />
+    ```
+
+*   Added a new redirect feature. It is now possible to set default redirects.
+
+    By default, when a form is submitted, it will redirect to the "list" page of the current resource. You can change this behavior by setting the `redirect` parameter like this:
+
+    ```tsx
+    <Refine
+        ...
+        options={{ redirect: { afterCreate: "show", afterClone: "edit", afterEdit: false }, }}
+    />
+    ```
+
+### Patch Changes
+
+-   -   `lodash` moved to "dependencies" for CommonJS builds
+
+*   -   Fixed `lodash-es` usage for ESM builds
+
+## 3.60.0
+
+### Minor Changes
+
+-   Added a new `<Refine>` component property: `options`.
+
+    Previously, the options were passed as a property to the `<Refine>` component. Now, the options are passed to the `<Refine>` via `options` property like this:
+
+    ```diff
+        <Refine
+    -       mutationMode="undoable"
+    -       undoableTimeout={5000}
+    -       warnWhenUnsavedChanges
+    -       syncWithLocation
+    -       liveMode="off"
+    -       disableTelemetry={false}
+    +       options={{
+    +           mutationMode: "undoable",
+    +           undoableTimeout: 5000,
+    +           warnWhenUnsavedChanges: true,
+    +           syncWithLocation: true,
+    +           liveMode: "off",
+    +           disableTelemetry: false,
+    +       }}
+        />
+    ```
+
+*   Added a new redirect feature. It is now possible to set default redirects.
+
+    By default, when a form is submitted, it will redirect to the "list" page of the current resource. You can change this behavior by setting the `redirect` parameter like this:
+
+    ```tsx
+    <Refine
+        ...
+        options={{ redirect: { afterCreate: "show", afterClone: "edit", afterEdit: false }, }}
+    />
+    ```
+
+### Patch Changes
+
+-   -   `lodash` moved to "dependencies" for CommonJS builds
+
+*   -   Fixed `lodash-es` usage for ESM builds
+
+## 3.59.0
+
+### Minor Changes
+
+-   [#2352](https://github.com/pankod/refine/pull/2352) [`e4d39eff33`](https://github.com/pankod/refine/commit/e4d39eff339d1c0ac391947843ebaa78d93830d6) Thanks [@salihozdemir](https://github.com/salihozdemir)! - Added a new `<Refine>` component property: `options`.
+
+    Previously, the options were passed as a property to the `<Refine>` component. Now, the options are passed to the `<Refine>` via `options` property like this:
+
+    ```diff
+        <Refine
+    -       mutationMode="undoable"
+    -       undoableTimeout={5000}
+    -       warnWhenUnsavedChanges
+    -       syncWithLocation
+    -       liveMode="off"
+    -       disableTelemetry={false}
+    +       options={{
+    +           mutationMode: "undoable",
+    +           undoableTimeout: 5000,
+    +           warnWhenUnsavedChanges: true,
+    +           syncWithLocation: true,
+    +           liveMode: "off",
+    +           disableTelemetry: false,
+    +       }}
+        />
+    ```
+
+*   [#2361](https://github.com/pankod/refine/pull/2361) [`95e1a17cd1`](https://github.com/pankod/refine/commit/95e1a17cd1e10d126ce38954d0f01c0e5a39ad6a) Thanks [@salihozdemir](https://github.com/salihozdemir)! - Added a new redirect feature. It is now possible to set default redirects.
+
+    By default, when a form is submitted, it will redirect to the "list" page of the current resource. You can change this behavior by setting the `redirect` parameter like this:
+
+    ```tsx
+    <Refine
+        ...
+        options={{ redirect: { afterCreate: "show", afterClone: "edit", afterEdit: false }, }}
+    />
+    ```
+
+### Patch Changes
+
+-   [#2366](https://github.com/pankod/refine/pull/2366) [`de87f13dad`](https://github.com/pankod/refine/commit/de87f13dadabc3de947534988abfbb2ff6263ca4) Thanks [@omeraplak](https://github.com/omeraplak)! - - `lodash` moved to "dependencies" for CommonJS builds
+
+*   [#2366](https://github.com/pankod/refine/pull/2366) [`de87f13dad`](https://github.com/pankod/refine/commit/de87f13dadabc3de947534988abfbb2ff6263ca4) Thanks [@omeraplak](https://github.com/omeraplak)! - - Fixed `lodash-es` usage for ESM builds
+
+## 3.58.5
+
+### Patch Changes
+
+-   `lodash` moved to dependencies.
+
+## 3.58.4
+
+### Patch Changes
+
+-   [#2350](https://github.com/pankod/refine/pull/2350) [`f8e5d99598`](https://github.com/pankod/refine/commit/f8e5d99598265af434f25fde104fafc9b7cac792) Thanks [@ozkalai](https://github.com/ozkalai)! - `lodash` moved to dependencies.
+
+## 3.58.3
+
+### Patch Changes
+
+-   Fixed react-query devtools was consuming high CPU
+
+## 3.58.2
+
+### Patch Changes
+
+-   [#2333](https://github.com/pankod/refine/pull/2333) [`2f0255ec95`](https://github.com/pankod/refine/commit/2f0255ec95b1a1fafedaa05143e02f17d86ddc81) Thanks [@omeraplak](https://github.com/omeraplak)! - Fixed react-query devtools was consuming high CPU
+
 ## 3.58.1
 
 ### Patch Changes

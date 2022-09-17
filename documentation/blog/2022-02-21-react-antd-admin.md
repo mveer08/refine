@@ -4,7 +4,7 @@ description: We will see how easy it is to develop a functional Admin panel with
 slug: refine-react-ant-design-admin-panel-framework
 authors: melih
 tags: [refine, antd, react, admin]
-image: https://refine.dev/img/refine_social.png
+image: /img/placeholder.png
 hide_table_of_contents: false
 ---
 
@@ -508,7 +508,7 @@ function App() {
             Header={Header}
             //highlight-start
             liveProvider={liveProvider(ablyClient)}
-            liveMode="auto"
+            options={{ liveMode: "auto" }}
             //highlight-end
             resources={[
                 {
@@ -666,7 +666,7 @@ const cerbos = new Cerbos({
     dataProvider={dataProvider("https://api.fake-rest.refine.dev")}
     Header={() => <Header role={role} />}
     liveProvider={liveProvider(ablyClient)}
-    liveMode="auto"
+    options={{ liveMode: "auto" }}
     //highlight-start
     accessControlProvider={{
         can: async ({ action, params, resource }) => {

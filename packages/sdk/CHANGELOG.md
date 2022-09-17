@@ -1,5 +1,29 @@
 # @pankod/refine-sdk
 
+## 0.6.0
+
+### Minor Changes
+
+-   Add storage support
+
+## 0.5.0
+
+### Minor Changes
+
+-   [#2522](https://github.com/pankod/refine/pull/2522) [`e0dce4dda7`](https://github.com/pankod/refine/commit/e0dce4dda7ec2a2fa5a8619cb2747e68865b76ec) Thanks [@yildirayunlu](https://github.com/yildirayunlu)! - Add storage support
+
+## 0.4.0
+
+### Minor Changes
+
+-   Update type declaration generation with `tsc` instead of `tsup` for better navigation throughout projects source code.
+
+## 0.3.0
+
+### Minor Changes
+
+-   [#2440](https://github.com/pankod/refine/pull/2440) [`0150dcd070`](https://github.com/pankod/refine/commit/0150dcd0700253f1c4908e7e5f2e178bb122e9af) Thanks [@aliemir](https://github.com/aliemir)! - Update type declaration generation with `tsc` instead of `tsup` for better navigation throughout projects source code.
+
 ## 0.2.0
 
 ### Minor Changes

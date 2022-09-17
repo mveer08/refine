@@ -22,7 +22,7 @@ export default defineConfig({
         {
             name: "textReplace",
             setup: (build) => {
-                build.onLoad({ filter: /.*/ }, async (args) => {
+                build.onLoad({ filter: /\.ts$/ }, async (args) => {
                     const contents = await fs.promises.readFile(
                         args.path,
                         "utf8",
@@ -102,4 +102,5 @@ export default defineConfig({
             },
         }),
     ],
+    onSuccess: "tsc --project tsconfig.declarations.json",
 });

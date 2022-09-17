@@ -8,7 +8,14 @@ import createAuthRefreshInterceptor, {
     AxiosAuthRefreshRequestConfig,
 } from "axios-auth-refresh";
 
-import { Auth, Log, DraftResource, Config } from "./services";
+import {
+    Auth,
+    Log,
+    DraftResource,
+    Config,
+    CloudQuery,
+    Storage,
+} from "./services";
 
 class Client {
     private baseUrl: string;
@@ -133,6 +140,14 @@ class Client {
         return new Config(this);
     }
 
+    get cloudQuery(): CloudQuery {
+        return new CloudQuery(this);
+    }
+
+    get storage(): Storage {
+        return new Storage(this);
+    }
+
     async call<D>(payload: {
         method:
             | "get"
@@ -148,13 +163,7 @@ class Client {
         skipAuthRefresh?: boolean;
         headers?: AxiosRequestHeaders;
     }): Promise<D> {
-        const { params, method, url, skipAuthRefresh, headers } = payload;
-        let { data } = payload;
-
-        data = {
-            ...data,
-            applicationClientId: this.clientId,
-        };
+        const { params, method, url, skipAuthRefresh, headers, data } = payload;
 
         const config: AxiosAuthRefreshRequestConfig = {
             baseURL: this.baseUrl,

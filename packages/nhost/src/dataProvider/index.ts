@@ -7,6 +7,8 @@ import {
     DataProvider,
     HttpError,
 } from "@pankod/refine-core";
+import setWith from "lodash/setWith";
+import set from "lodash/set";
 
 export type HasuraSortingType = Record<string, "asc" | "desc">;
 
@@ -19,10 +21,13 @@ export const generateSorting: GenerateSortingType = (sorting?: CrudSorting) => {
         return undefined;
     }
 
-    const sortingQueryResult: Record<string, "asc" | "desc"> = {};
+    const sortingQueryResult: Record<
+        string,
+        "asc" | "desc" | HasuraSortingType
+    > = {};
 
     sorting.forEach((sortItem) => {
-        sortingQueryResult[sortItem.field] = sortItem.order;
+        set(sortingQueryResult, sortItem.field, sortItem.order);
     });
 
     return sortingQueryResult as HasuraSortingType;
@@ -65,6 +70,14 @@ const hasuraFilters: Record<CrudOperators, HasuraFilterCondition | undefined> =
         between: undefined,
         nbetween: undefined,
         nnull: undefined,
+        startswith: undefined,
+        nstartswith: undefined,
+        startswiths: undefined,
+        nstartswiths: undefined,
+        endswith: undefined,
+        nendswith: undefined,
+        endswiths: undefined,
+        nendswiths: undefined,
     };
 
 export const generateFilters: any = (filters?: CrudFilters) => {
@@ -81,10 +94,9 @@ export const generateFilters: any = (filters?: CrudFilters) => {
         }
 
         if (filter.operator !== "or") {
-            if (!resultFilter.hasOwnProperty(filter.field)) {
-                resultFilter[filter.field] = {};
-            }
-            resultFilter[filter.field][operator] = filter.value;
+            const fieldsArray = filter.field.split(".");
+            const fieldsWithOperator = [...fieldsArray, operator];
+            setWith(resultFilter, fieldsWithOperator, filter.value, Object);
         } else {
             const orFilter: any = [];
 
